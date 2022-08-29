@@ -18,8 +18,8 @@
     </div>
   </div>
 </nav> -->
-  <nav class="Navbar navbar-dark fixed-top">
-    <div class="navbarr container-fluid">
+  <nav class="Navbar navbar-dark sticky-top">
+    <div class="navbar container-fluid">
       <router-link :to="{ name: 'home' }" class="text-decoration-none">
         <a class="navbar-brand"> ℂ𝕙𝕒𝕣𝕝𝕖𝕤 𝔸𝕦𝕥𝕠𝕤 </a>
       </router-link>
@@ -30,7 +30,7 @@
         data-bs-target="#offcanvasDarkNavbar"
         aria-controls="offcanvasDarkNavbar"
       >
-        <img class="profile" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg">
+        <img class="profile mx-3" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg">
       </button>
       <div
         class="offcanvas offcanvas-start"
@@ -49,16 +49,19 @@
               ></button>
           </div>
           <div class="row">
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
-          <img src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+             <router-link :to="{ name: 'profile' }" class="text-decoration-none">
+        <img src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
+      </router-link>
+          </h5>
           </div>
           </div> 
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <router-link :to="{ name: 'home' }" class="text-decoration-none">
-        <a class="navbar-brand"> ℍ𝕠𝕞𝕖 </a>
-      </router-link>
+              <a class="navbar-brand"> ℍ𝕠𝕞𝕖 </a>
+            </router-link>
       <router-link :to="{ name: 'about' }" class="text-decoration-none">
         <a class="navbar-brand"> 𝔸𝕓𝕠𝕦𝕥 </a>
       </router-link>
@@ -110,27 +113,7 @@ export default {};
 </script>
 
 <style scoped>
-:root {
-    --color-primary: #d11c1c;
-    /* --color-secondary: rgba(0, 0, 0, 0.66); */
-    --color-white: #e3e8e3;
-    --color-black: #030910;
-    /* --color-dark: #1b5512; */
-    --color-gray: #948987;
-    --font-Poppins: 'Poppins', sans-serif;
-    --font-Raleway: 'Raleway', sans-serif;
-    --font-OpenSans: 'Open Sans', sans-serif;
-	--font-xlg: 90px;
-    --font-lg: 64px;
-    --font-md: 24px;
-    --font-sm: 15px;
-    --font-xs: 9px;
-    --size-lg: 1280px;
-    --size-md: 976px;
-    --size-sm: 768px;
-    --size-xs: 500px;
-	--size-ms: 200px;
-}
+
 .offcanvas-header img {
   width:260px;
   height: 230px;
@@ -138,27 +121,27 @@ export default {};
   padding-top:10px;
 }
 .Navbar{
-  background-color: rgb(14, 8, 8);
-  height:50px;
+  background-color: rgb(30, 32, 32);
+  height:70px;
 }
 .navbar-toggler{
   padding:0;
-  border:#000000
+  border:rgb(30, 32, 32);
 }
 a{
-  font-size:25px;
-  color:rgb(104, 9, 27);
+  font-size:30px;
+  color:rgb(121, 6, 27);
   font-weight:bold;
   margin-left:2%
 }
 .profile{
-  height:40px;
-  width:40px;
+  height:50px;
+  width:50px;
   border-radius:50%;
 }
 .offcanvas{
   width:300px;
-  background-color: rgb(14, 8, 8);
+  background-color: rgb(30, 32, 32);
 }
 
 .btn-close{
