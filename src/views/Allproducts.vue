@@ -1,7 +1,7 @@
 <template>
     <section id="products">
         <div v-if="cars">
-            <div class="container p-3">
+            <div class="container">
                 <div class="row mx-auto">
                     <Cars v-for="car in cars" :key="car" :car="car" />
                 </div>
@@ -26,5 +26,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    .container{
+        max-width: 100%;
+        --bs-gutter-x:0px;
+    }
+    #products{
+        padding-top:50px;
+        padding-bottom:50px;
+        background-image: url("https://i.postimg.cc/J0HXFvCr/logo1.png");
+        background-attachment: fixed;
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-repeat: no-repeat;
+        background-position:bottom;
+    }
 </style>

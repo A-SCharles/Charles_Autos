@@ -58,7 +58,7 @@
           </div> 
         </div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <ul  data-bs-dismiss="offcanvas" class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <router-link :to="{ name: 'home' }" class="text-decoration-none">
               <a class="navbar-brand"> ℍ𝕠𝕞𝕖 </a>
             </router-link>
@@ -121,16 +121,17 @@ export default {};
   padding-top:10px;
 }
 .Navbar{
-  background-color: rgb(30, 32, 32);
+  background-color: rgb(121, 6, 27);
   height:70px;
 }
 .navbar-toggler{
   padding:0;
   border:rgb(30, 32, 32);
+  /* margin-left:20px; */
 }
 a{
   font-size:30px;
-  color:rgb(121, 6, 27);
+  color:rgb(9, 5, 6);
   font-weight:bold;
   margin-left:2%
 }
@@ -140,8 +141,8 @@ a{
   border-radius:50%;
 }
 .offcanvas{
-  width:300px;
-  background-color: rgb(30, 32, 32);
+  width:310px;
+  background-color: rgb(121, 6, 27);
 }
 
 .btn-close{

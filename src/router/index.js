@@ -27,6 +27,11 @@ const routes = [
     name: "profile",
     component: () => import("../views/ProfileView.vue"),
   },
+  {
+    path: "/single",
+    name: "single",
+    component: () => import("../views/SingleView.vue"),
+  }
 ];
 
 const router = createRouter({
