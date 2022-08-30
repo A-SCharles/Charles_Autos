@@ -1,16 +1,21 @@
 <template>
 <div class="card mx-auto m-4 p-3">
   <div class="row">
-    <div class="col-4">
+    <div class="col-md-4">
     <img :src="car.img" style="height:200px; width:320px" class="card-img-top" alt="...">
     <div class="vr" style="width:2px; color:black; height:180px"></div>
     </div>
     
-    <div class="col-8">
+    <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{car.model}}</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
+      <router-link :to="{name: 'single', params: {id: car.id}}">
+        <button class="btn btn-primary">
+          View Details
+        </button>
+      </router-link>
     </div>
   </div>
 </div>
@@ -18,7 +23,7 @@
 
 <script>
 export default {
-props : ['car']
+props: ["car"],
 }
 </script>
 

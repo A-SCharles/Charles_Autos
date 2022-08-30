@@ -20,6 +20,12 @@ const routes = [
     path: "/all",
     name: "all",
     component: () => import("../views/Allproducts.vue"),
+    props: true
+  },
+  {
+    path: "/all/:id",
+    name: "single",
+    component: () => import("../views/carDetail.vue"),
     props: true,
   },
   {
@@ -28,14 +34,24 @@ const routes = [
     component: () => import("../views/ProfileView.vue"),
   },
   {
-    path: "/single",
-    name: "single",
-    component: () => import("../views/SingleView.vue"),
-  }
+    path: "/login",
+    name: "login",
+    component: () => import("../views/login.vue"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: () => import("../views/register.vue"),
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: () => import("../views/admin.vue"),
+  },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 

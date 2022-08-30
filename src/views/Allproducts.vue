@@ -3,7 +3,7 @@
         <div v-if="cars">
             <div class="container">
                 <div class="row mx-auto">
-                    <Cars v-for="car in cars" :key="car" :car="car" />
+                    <Cars v-for="car in cars" :key="car" :car="car"/>
                 </div>
             </div>
         </div>
