@@ -1,13 +1,11 @@
 <template>
-  <nav class="Navbar navbar-dark sticky-top">
+  <nav class="Navbar sticky-top">
     <div class="navbar container">
       <router-link :to="{ name: 'home' }" class="text-decoration-none">
         <a class="navbar-brand"> ℂ𝕙𝕒𝕣𝕝𝕖𝕤 𝔸𝕦𝕥𝕠𝕤 </a>
       </router-link>
-      <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-        <img class="profile mx-3" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
-      </button>
+      
+
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar"
         aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
@@ -17,9 +15,11 @@
             </div>
             <div class="row">
               <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
-                <router-link :to="{ name: 'profile' }" class="text-decoration-none">
-                  <img data-bs-dismiss="offcanvas" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
-                </router-link>
+                <div v-if="user">
+                <router-link :to="{ name: 'profile', params:{user: user} }" :user="user" class="text-decoration-none">
+                    <img data-bs-dismiss="offcanvas" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
+                  </router-link>
+                </div>
               </h5>
             </div>
           </div>
@@ -45,15 +45,21 @@
           </ul>
         </div>
       </div>
-      <div v-if="user">
+      
+      <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <img class="profile mx-3" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
+    </button>
+    
+    <div v-if="user">
           <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlist"
             aria-controls="wishlist">
-            <i></i>
+            <i class="fa-regular fa-heart fs-1"></i>
           </button>
 
         <Wishlist :id="user.id"/>
-
       </div>
+
       <div v-else class="d-flex w-25 justify-content-between">
         <router-link to="/register">Register</router-link>
         <router-link to="/login">Login</router-link>

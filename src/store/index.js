@@ -128,20 +128,56 @@ export default createStore({
           context.commit("setToken", data.token);
         });
     },
+    getUser: (context, user) => {
+      fetch("http://localhost:3000/users/" + user)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        context.commit("setUser", data.results[0]);
+      })
+    },
     editUser: async (context, user) => {
-      await fetch("http://localhost:3000/users/" + user.id)
+    //  user = toRaw(user);
+    //  console.log(user.id);
+      await fetch("http://localhost:3000/users/" + user.id, {
+        method: "PUT",
+        body : JSON.stringify(user),
+        headers : {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": context.state.token,
+        }
+      })
         .then((res) => res.json())
-        .then((data) => {});
+        .then((data) => {
+          // console.log(data);
+          context.dispatch("getUser", user.id)
+        });
     },
     editUserPassword: async (context, user) => {
-      await fetch("http://localhost:3000/users/" + user.id)
+      await fetch("http://localhost:3000/users/" + user.id+ "/pass", {
+        method: "PUT",
+        headers : {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": context.state.token,
+        }
+      })
         .then((res) => res.json())
-        .then((data) => {});
+        .then((data) => {
+          console.log(data);
+        });
     },
     deleteUser: async (context, id) => {
-      await fetch("http://localhost:3000/users/" + id)
+      await fetch("http://localhost:3000/users/" + id, {
+        method: "DELETE",
+        headers : {
+          "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": context.state.token,
+        }
+      })
         .then((res) => res.json())
-        .then((data) => {});
+        .then((data) => {
+          console.log(data);
+        });
     },
 
     //wishlist
@@ -156,7 +192,7 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          // console.log(data)
           context.commit("setwishlist", data);
         });
     },
