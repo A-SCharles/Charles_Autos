@@ -1,13 +1,4 @@
 <template>
-    <!-- <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#wishlist" role="button"
-        aria-controls="wishlist">
-        Link with href
-    </a>
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlist"
-        aria-controls="wishlist">
-        Button with data-bs-target
-    </button> -->
-
     <div class="offcanvas offcanvas-end" tabindex="-1" id="wishlist" aria-labelledby="wishlist">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="wishlistTitle">Wishlist Items</h5>

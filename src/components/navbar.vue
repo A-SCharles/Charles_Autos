@@ -4,19 +4,6 @@
       <router-link :to="{ name: 'home' }" class="text-decoration-none">
         <a class="navbar-brand"> ℂ𝕙𝕒𝕣𝕝𝕖𝕤 𝔸𝕦𝕥𝕠𝕤 </a>
       </router-link>
-      <div v-if="user">
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlist"
-            aria-controls="wishlist">
-            Button with data-bs-target
-          </button>
-
-        <Wishlist :id="user.id"/>
-
-      </div>
-      <div v-else class="d-flex w-25 justify-content-between">
-        <router-link to="/register">Register</router-link>
-        <router-link to="/login">Login</router-link>
-      </div>
       <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <img class="profile mx-3" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
@@ -57,6 +44,19 @@
             </router-link>
           </ul>
         </div>
+      </div>
+      <div v-if="user">
+          <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlist"
+            aria-controls="wishlist">
+            <i></i>
+          </button>
+
+        <Wishlist :id="user.id"/>
+
+      </div>
+      <div v-else class="d-flex w-25 justify-content-between">
+        <router-link to="/register">Register</router-link>
+        <router-link to="/login">Login</router-link>
       </div>
     </div>
   </nav>
