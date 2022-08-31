@@ -16,6 +16,7 @@
                 <h2><span>Year : </span>{{car.modelyear}}</h2>
                 <h2><span>Body Style: </span>{{car.bodystyle}}</h2>
                 <h2><span>Price : </span>R{{car.MSRP}}.00</h2>
+                <button @click="add">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -39,6 +40,14 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getCar", this.id)
+  },
+
+  methods: {
+    add() {
+    this.$store.dispatch("addToWishlist", {
+      id: this.id
+    })
+    }
   },
 };
 </script>

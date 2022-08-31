@@ -23,7 +23,11 @@
         <tbody v-if="cars">
           <tr v-for="car in cars" :key="car.id">
             <td>{{ car.id }}</td>
-            <td>{{ car.manufacturer }}</td>
+            <td>
+            <router-link :to="{name: 'single', params : {id: car.id}}">
+              {{ car.manufacturer }}
+            </router-link>
+            </td>
             <td>{{ car.model }}</td>
             <td>R{{ car.MSRP }}.00</td>
             <td>
