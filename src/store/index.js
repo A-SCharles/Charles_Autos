@@ -192,8 +192,11 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          // console.log(data)
-          context.commit("setwishlist", data);
+          console.log(data)
+          if (data != null) {
+            context.commit("setwishlist", JSON.parse
+            (data));
+          }
         });
     },
     addToWishlist: async (context, item, id) => {
@@ -218,11 +221,13 @@ export default createStore({
         method: "DELETE",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
+          "x-auth-token": context.state.token,
         },
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          context.dispatch("getWishlist", id);
         });
     },
     deleteWishlistItem: async (context, list, id) => {
@@ -244,5 +249,7 @@ export default createStore({
         });
     },
   },
-  modules: {},
+  modules: {
+    
+  },
 });

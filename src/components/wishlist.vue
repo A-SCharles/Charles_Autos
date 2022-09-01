@@ -15,6 +15,10 @@
                                 class="fa-solid fa-trash-can"></i></a>
                     </div>
                 </div>
+
+                <div class="my-2">
+                    <button class="btn btn-danger" @click="clear">Remove All items from wishlist</button>
+                </div>
                 <div class="dropdown mt-3">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                         Dropdown button
@@ -42,7 +46,9 @@ export default {
         this.$store.dispatch("getWishlist", this.id)
     },
     methods: {
-
+        clear() {
+            this.$store.dispatch('clearWishlist', this.id)
+        }
     },
 }
 </script>
