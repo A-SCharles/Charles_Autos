@@ -17,5 +17,6 @@ export default {
 *{
   padding:0;
   margin:0;
+  /* --bs-gutter-x:0px; */
 }
 </style>

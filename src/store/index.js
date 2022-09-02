@@ -62,7 +62,8 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
+          context.state.msg = data.msg
           context.dispatch("getCars");
         });
     },
@@ -77,7 +78,8 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
+          context.state.msg = data.msg
           context.dispatch("getCars");
         });
     },
@@ -91,7 +93,7 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           context.dispatch("getCars");
         });
     },
@@ -107,7 +109,8 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
+          context.state.msg = data.msg
           context.dispatch("login", payload);
         });
     },
@@ -122,7 +125,7 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           context.state.msg = data.msg;
           context.commit("setUser", data.user);
           context.commit("setToken", data.token);
@@ -133,6 +136,7 @@ export default createStore({
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
+        context.state.msg = data.msg
         context.commit("setUser", data.results[0]);
       })
     },
@@ -150,6 +154,7 @@ export default createStore({
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
+          context.state.msg = data.msg
           context.dispatch("getUser", user.id)
         });
     },
@@ -192,7 +197,7 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
+          // console.log(data)
           if (data != null) {
             context.commit("setwishlist", JSON.parse
             (data));
@@ -212,7 +217,8 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
+          context.state.msg = data.msg
           context.dispatch("getWishlist", id);
         });
     },
@@ -226,7 +232,8 @@ export default createStore({
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
+          context.state.msg = data.msg
           context.dispatch("getWishlist", id);
         });
     },
@@ -244,12 +251,13 @@ export default createStore({
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
+          context.state.msg = data.msg
           context.dispatch("getWishlist", id);
         });
     },
   },
   modules: {
-    
+
   },
 });

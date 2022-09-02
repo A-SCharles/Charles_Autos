@@ -46,23 +46,27 @@
         </div>
       </div>
       
-      <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-      <img class="profile mx-3" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
-    </button>
-    
-    <div v-if="user">
+      <div class="d-flex">
+
+        
+        <div v-if="user">
+          
+          <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <img class="profile mx-3" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
+      </button>
           <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlist"
             aria-controls="wishlist">
             <i class="fa-regular fa-heart fs-1"></i>
           </button>
-
-        <Wishlist :id="user.id"/>
-      </div>
-
-      <div v-else class="d-flex w-25 justify-content-between">
-        <router-link to="/register">Register</router-link>
-        <router-link to="/login">Login</router-link>
+          
+          <Wishlist :id="user.id"/>
+        </div>
+        
+        <div v-else class="d-flex w-25 justify-content-between">
+          <router-link to="/register">Register</router-link>
+          <router-link to="/login">Login</router-link>
+        </div>
       </div>
     </div>
   </nav>
@@ -122,5 +126,9 @@ a {
   /* padding-right:10px; */
   height: 30px;
   width: 30px;
+}
+.Navbar a.router-link-exact-active{
+ filter: invert();
+
 }
 </style>
