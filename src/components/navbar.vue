@@ -40,7 +40,7 @@
             </router-link>
 
             <router-link :to="{ name: 'admin' }" class="text-decoration-none">
-              <a class="navbar-brand"> Admin </a>
+              <a class="navbar-brand"> 𝔸𝕕𝕞𝕚𝕟</a>
             </router-link>
           </ul>
         </div>

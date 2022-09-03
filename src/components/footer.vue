@@ -70,7 +70,7 @@
 <style scoped>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 #footer {
-    max-height: 10vh;
+  max-height: 10vh;
 }
 .container {
   background-color: rgb(99, 6, 9);

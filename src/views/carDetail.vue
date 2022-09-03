@@ -23,7 +23,7 @@
                   <h2>Body Style: </h2>
                   <h2>Price :</h2>
                 </div>
-                <div class="col">
+                <div class="col d-flex flex-column">
                   <span> {{car.model}}</span>
                   <span> {{car.fueltype}}</span>
                   <span> {{car.manufacturer}}</span>
@@ -35,7 +35,7 @@
               </div>
             </div>
                 
-                <button class="button" @click="add">Add to Cart</button>
+                <button type="button" class="btn" @click="add">Add to Cart</button>
               </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default {
     padding:0px ;
     margin:0px;
   }
-  .conatiner{
+  .container{
     max-width:100%;
     /* background-color:100% 100%; */
     --bs-gutter-x:0px
@@ -94,7 +94,7 @@ a{
   text-decoration: none;
   font-weight:bold;
 }
-button{
+.btn{
   height:50px;
   width: 300px;
   background-color:rgba(64, 64, 64, 0.725);
@@ -104,7 +104,7 @@ button{
   margin-top:10%;
   border-width:1px;
 }
-button:hover{
+.btn:hover{
   background-color:var(--color-);
 }
 .col1{
@@ -130,7 +130,7 @@ button:hover{
   font-size:25px;
   font-weight:bold;
   color:rgb(18, 18, 18);
-  margin-bottom:5px;
+  margin-bottom:10px;
 }
 
 span{
@@ -143,7 +143,7 @@ span{
 .s2{
   position: absolute;
   top: 15vh;
-  width: 44vw;
+  width: 40vw;
   bottom: 0;
   /* animation: gg .5s ease-out forwards; */
   /* pointer-events: none; */
