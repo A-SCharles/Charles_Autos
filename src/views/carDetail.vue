@@ -2,7 +2,7 @@
   <section id="single">
     <div v-if="car">
       <div class="container">
-        <div class="card">
+        <!-- <div class="card"> -->
             <div class="row">
             <div class="col1">
               <router-link to="/all"><i class="bi bi-arrow-left ps-4"></i></router-link>
@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
     <div v-else>
       <h2>Loading</h2>
     </div>
@@ -81,7 +81,7 @@ export default {
     --bs-gutter-x:0px
   }
 #single {
-  min-height: 91vh;
+  min-height: auto;
 }
 i{
   height:30px;
@@ -97,10 +97,10 @@ a{
 .btn{
   height:50px;
   width: 300px;
-  background-color:rgba(64, 64, 64, 0.725);
+  background-color:rgb(255, 254, 254);
   border-radius:15px;
   margin-right:auto;
-  margin-left:38%;
+  margin-left:29%;
   margin-top:10%;
   border-width:1px;
 }
@@ -109,11 +109,12 @@ a{
 }
 .col1{
   height:auto;
-  width:52%;
-  background-color:rgb(64, 63, 63);
+  width:47%;
+  background-color:rgb(255, 254, 254);
 }
 .col{
   margin-left:2%;
+  color:rgb(255, 254, 254);
 }
 .card{
   position:relative;
@@ -125,6 +126,9 @@ a{
   /* overflow:hidden; */
   /* box-shadow:0px 5px 10px black; */
   
+}
+.row{
+  background-color:rgb(64, 63, 63);
 }
  h2{
   font-size:25px;

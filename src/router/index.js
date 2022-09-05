@@ -29,6 +29,12 @@ const routes = [
     props: true,
   },
   {
+    path: "/admin/all/:id",
+    name: "singleAdmin",
+    component: () => import("../views/singlle.vue"),
+    props: true,
+  },
+  {
     path: "/profile/",
     name: "profile",
     component: () => import("../views/ProfileView.vue"),

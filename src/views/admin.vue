@@ -1,8 +1,8 @@
 <template>
   <div id="admin">
     <div class="container text-center p-5">
-      <h2 class="text-center">Cars Table</h2>
-      <table class="table table-hover">
+      <h2 class="text-center">ℂ𝕒𝕣𝕤 𝕋𝕒𝕓𝕝𝕖</h2>
+      <table class="table table-hover text-white">
         <thead>
           <tr>
             <th scope="col">#id</th>
@@ -24,7 +24,7 @@
           <tr v-for="car in cars" :key="car.id">
             <td>{{ car.id }}</td>
             <td>
-            <router-link :to="{name: 'single', params : {id: car.id}}">
+            <router-link :to="{name: 'singleAdmin', params : {id: car.id}}">
               {{ car.manufacturer }}
             </router-link>
             </td>
@@ -78,5 +78,26 @@ export default {
 <style scoped>
 #admin {
   min-height: 100vh;
+  background-color: rgb(64, 63, 63);
+  color: white;
+}
+i{
+  color:white
+}
+a{
+  text-decoration: none;
+  color:rgb(137, 9, 9);
+  font-weight: bold;
+}
+thead{
+  color:black;
+  font-size:20px
+}
+h2{
+  color:black;
+  font-size:40px
+}
+tr:hover{
+color:black
 }
 </style>

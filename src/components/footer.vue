@@ -73,6 +73,7 @@
   max-height: 10vh;
 }
 .container {
+  min-height: fit-content;
   background-color: rgb(99, 6, 9);
   max-width: 100%;
   color: rgb(13, 8, 9);
@@ -80,5 +81,9 @@
 .col {
   /* width:500px; */
   padding: 10px;
+}
+
+h6{
+  margin-top:20px;
 }
 </style>

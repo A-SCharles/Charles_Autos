@@ -22,8 +22,8 @@
                     </div>
                 </div>
 
-                <div class="my-2">
-                    <button class="btn" @click="clear">Remove All items from wishlist</button>
+                <div class="my-2 text-center">
+                    <button class="btn text-white" @click="clear">Remove All items from wishlist</button>
                 </div>
                
             </div>
@@ -85,4 +85,8 @@ a {
     color:rgb(144, 2, 2);
     font-weight:bold
 }
+
+/* .btn {
+    color:rgb(144, 2, 2);
+} */
 </style>
