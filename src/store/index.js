@@ -9,6 +9,7 @@ export default createStore({
     token: null || localStorage.getItem("token"),
     admin: false,
     msg: null,
+    // loader : "https://i.postimg.cc/xCqJFzD7/hzk6C.gif"
   },
   getters: {},
   mutations: {
@@ -26,8 +27,12 @@ export default createStore({
       // console.log(user);
     },
     setwishlist: (state, list) => {
+      if(list === null) {
+        state.wishlist = null;
+      } else {
       state.wishlist = list;
       // console.log(list);
+    }
     },
     setToken: (state, token) => {
       state.token = token;
@@ -201,6 +206,8 @@ export default createStore({
           if (data != null) {
             context.commit("setwishlist", JSON.parse
             (data));
+          } else {
+            context.commit("setwishlist", null);
           }
         });
     },

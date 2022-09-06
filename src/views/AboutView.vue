@@ -126,13 +126,14 @@ font-weight:bold;
   height:250px;
 }
 #right{
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(91, 90, 90, 0.771);
 }
 #left{
   background-color: rgb(86, 86, 86);
 }
 #fill{
-  background-color: rgba(91, 90, 90, 0.771);
+  background-color: rgb(0, 0, 0);
+  color:white
 }
 .row8{
   height:60px;
@@ -182,7 +183,7 @@ background-color: rgb(255, 255, 255);
 .row8 figure{
   position:absolute;
   width:200%;
-  animation: 10s slide ease-in-out infinite ;
+  animation: 10s slide linear infinite ;
  
 }
 @keyframes slide{

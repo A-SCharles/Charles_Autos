@@ -5,7 +5,7 @@
     <div class="col-md-4">
     <img :src="car.img" style="height:200px; width:320px" class="card-img-top" alt="...">
   </div>
-    <div class="vr" style="width:2px; color:black; height:180px"></div>
+    <div class="vr" style="width:1px; color:black; height:180px; margin-right: 10px;"></div>
     
     <div class="col-md-7">
       <!-- <div class="card-body"> -->

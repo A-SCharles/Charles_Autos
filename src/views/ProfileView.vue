@@ -99,11 +99,16 @@
         </div>
       </div>
     </div>
+    <div v-else>
+      <Loader/>
+    </div>
   </div>
 </template>
 
 <script>
+import Loader from "@/components/loading.vue"
 export default {
+  components:{Loader},
   computed: {
     user() {
       return this.$store.state.user;

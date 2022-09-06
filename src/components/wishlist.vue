@@ -13,19 +13,24 @@
                         </div>
                         <div class="col pt-3 mx-auto">
                             <h4>
-                               {{  item.model  }} 
+                                {{ item.model }}
                             </h4>
-                            
+
                         </div>
                         <div class="vr" style="height:auto; padding:0px; margin-bottom:6px; margin-top:6px"></div>
-                        <a class="col-2 btn my-auto me-2" @click="this.$store.dispatch('deleteWishlistItem', item)"><i class="fa-solid fa-trash-can"></i></a>
+                        <a class="col-2 btn my-auto me-2" @click="this.$store.dispatch('deleteWishlistItem', item)"><i
+                                class="fa-solid fa-trash-can"></i></a>
                     </div>
                 </div>
 
                 <div class="my-2 text-center">
                     <button class="btn text-white" @click="clear">Remove All items from wishlist</button>
                 </div>
-               
+
+                <div v-if="msg" class="text-center m-5">
+                    <h2>{{ msg }}</h2>
+                </div>
+
             </div>
         </div>
     </div>
@@ -38,8 +43,8 @@ export default {
         wishlist() {
             return this.$store.state.wishlist
         },
-        msg(){
-        return this.$store.state.msg
+        msg() {
+            return this.$store.state.msg
         }
     },
     mounted() {
@@ -54,36 +59,41 @@ export default {
 </script>
 
 <style scoped>
-.row{
-    background-color:rgba(102, 101, 101, 0.082);
-    box-shadow:0px 5px 5px rgb(29, 28, 28);
-    color:rgb(11, 11, 11);
-    margin-bottom:10px;
-    height:auto;
+.row {
+    background-color: rgba(102, 101, 101, 0.082);
+    box-shadow: 0px 5px 5px rgb(29, 28, 28);
+    color: rgb(11, 11, 11);
+    margin-bottom: 10px;
+    height: auto;
 }
-.offcanvas-body{
+
+.offcanvas-body {
     background-color: rgb(64, 63, 63);
 }
-.offcanvas-header{
+
+.offcanvas-header {
     background-color: rgb(64, 63, 63);
 }
-.offcanvas{
-    width:400px;
-    border-width:1px;
-    border-color:rgb(0, 0, 0);
+
+.offcanvas {
+    width: 400px;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
 }
+
 /* router-link{
     height:50px 
     text-decoration:none;
     color:white;
 } */
 a {
-    text-decoration:none;
-    color:bisque
+    text-decoration: none;
+    color: bisque
 }
-.offcanvas-title{
-    color:rgb(144, 2, 2);
-    font-weight:bold
+
+.offcanvas-title {
+    color: rgb(144, 2, 2);
+    font-weight: bold
 }
 
 /* .btn {

@@ -19,4 +19,8 @@ export default {
   margin:0;
   /* --bs-gutter-x:0px; */
 }
+
+.else {
+  min-height: 100vh;
+}
 </style>

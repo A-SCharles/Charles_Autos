@@ -4,11 +4,20 @@
       <div class="row">
         <div class="col m-3">
           <h6>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quasi
-            corrupti voluptas ex tempora perspiciatis amet iure! Omnis nemo
-            commodi nesciunt, molestias laudantium expedita. Incidunt facilis
-            nam accusantium molestias! Omnis.
+            Company
           </h6>
+          <router-link to="/contact">
+            <p>Contact us</p>
+            
+          </router-link>
+          <router-link to="/about">
+            <p>About us</p>
+            
+          </router-link>
+          <router-link to="/contact us">
+            <p>Feedback</p>
+            
+          </router-link>
         </div>
         <div class="col mt-3">
           <h6>

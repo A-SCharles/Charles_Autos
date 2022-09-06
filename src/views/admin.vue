@@ -45,6 +45,9 @@
             </td>
           </tr>
         </tbody>
+        <tbody v-else>
+          <Loader/>
+        </tbody>
       </table>
     </div>
   </div>
@@ -62,16 +65,20 @@
 <script>
 import AddModal from "@/components/addModal.vue";
 import UpdateModal from "@/components/updateModal.vue";
+import Loader from "@/components/loading.vue"
 export default {
   computed: {
     cars() {
       return this.$store.state.cars;
     },
+    loader() {
+      return this.$store.state.loader;
+    },
   },
   mounted() {
     this.$store.dispatch("getCars");
   },
-  components: { AddModal, UpdateModal },
+  components: { AddModal, UpdateModal, Loader },
 };
 </script>
 
@@ -95,7 +102,8 @@ thead{
 }
 h2{
   color:black;
-  font-size:40px
+  font-size:50px;
+  font-weight: bold;
 }
 tr:hover{
 color:black

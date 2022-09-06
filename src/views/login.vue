@@ -2,7 +2,7 @@
   <section id="login">
     <div class="container">
       <div class="row d-flex justify-content-center align-content-center">
-        <form @submit="login" class="border p-5 rounded-5">
+        <form @submit="login" class="border border-dark p-5 rounded-5">
           <h2 class="display-3 fw-bolder text-center mb-4">𝕃𝕠𝕘𝕚𝕟</h2>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"
@@ -76,14 +76,15 @@ export default {
 <style scoped>
 #login {
   min-height: 100vh;
-  background-image: url("https://i.postimg.cc/Yq5M2vjK/car.gif");
+  background-image: url("https://i.postimg.cc/J0sVdrdq/car-driving-18.gif");
   /* background-size: cover;
   background-repeat: no-repeat; */
   
 }
 .container{
   width:300px;
-  color:rgb(81, 80, 80)
+  color:rgb(81, 80, 80);
+  
 }
 a{
   text-decoration: none;
@@ -111,7 +112,6 @@ a{
 }
 form{
   background-color:rgb(0, 0, 0)
-
 }
 input{
   border-width:1px;

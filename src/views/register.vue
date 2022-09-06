@@ -81,7 +81,10 @@ export default {
 
 <style scoped>
 #register {
-  min-height: 100vh;
+  min-height: 60vh;
+  background-image: url("https://i.postimg.cc/1tH70kmK/c7104a5185e327d62f7aab51800d4212.gif");
+  background-size: cover;
+
 }
 
 .container{
