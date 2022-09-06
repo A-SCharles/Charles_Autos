@@ -4,20 +4,38 @@
       <router-link :to="{ name: 'home' }" class="text-decoration-none">
         <a class="navbar-brand"> ℂ𝕙𝕒𝕣𝕝𝕖𝕤 𝔸𝕦𝕥𝕠𝕤 </a>
       </router-link>
-      
 
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel">
+      <div
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel"
+      >
         <div class="offcanvas-header">
           <div class="container">
             <div class="row">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="row">
               <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
                 <div v-if="user">
-                <router-link :to="{ name: 'profile', params:{user: user} }" :user="user" class="text-decoration-none">
-                    <img data-bs-dismiss="offcanvas" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
+                  <router-link
+                    :to="{ name: 'profile', params: { user: user } }"
+                    :user="user"
+                    class="text-decoration-none"
+                  >
+                    <img class="rounded-circle"
+                      data-bs-dismiss="offcanvas"
+                      src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg"
+                    />
+                    <h2 data-bs-dismiss="offcanvas" class="text-center">
+                      View Profile
+                    </h2>
                   </router-link>
                 </div>
               </h5>
@@ -25,7 +43,10 @@
           </div>
         </div>
         <div class="offcanvas-body">
-          <ul data-bs-dismiss="offcanvas" class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <ul
+            data-bs-dismiss="offcanvas"
+            class="navbar-nav justify-content-end flex-grow-1 pe-3"
+          >
             <router-link :to="{ name: 'home' }" class="text-decoration-none">
               <a class="navbar-brand"> ℍ𝕠𝕞𝕖 </a>
             </router-link>
@@ -35,37 +56,55 @@
             <router-link :to="{ name: 'all' }" class="text-decoration-none">
               <a class="navbar-brand"> ℙ𝕣𝕠𝕕𝕦𝕔𝕥𝕤 </a>
             </router-link>
-            <router-link :to="{ name: 'contacts' }" class="text-decoration-none">
-              <a class="navbar-brand"> ℂ𝕠𝕟𝕥𝕒𝕔𝕥𝕤 </a>
+            <router-link :to="{ name: 'contact' }" class="text-decoration-none">
+              <a class="navbar-brand"> ℂ𝕠𝕟𝕥𝕒𝕔𝕥 </a>
             </router-link>
-
-            <router-link :to="{ name: 'admin' }" class="text-decoration-none">
-              <a class="navbar-brand"> 𝔸𝕕𝕞𝕚𝕟</a>
-            </router-link>
+            <div v-if="admin">
+              <router-link :to="{ name: 'admin' }" class="text-decoration-none">
+                <a class="navbar-brand"> 𝔸𝕕𝕞𝕚𝕟</a>
+              </router-link>
+            </div>
           </ul>
         </div>
       </div>
-      
-      <div class="d-flex">
 
-        
+      <div class="d-flex">
         <div v-if="user">
-          
-          <button class="navbar-toggler justify-content-end" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-        <img class="profile mx-3" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" />
-      </button>
-          <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#wishlist"
-            aria-controls="wishlist">
+          <button
+            class="navbar-toggler justify-content-end"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar"
+          >
+            <img
+              class="profile mx-3"
+              src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg"
+            />
+          </button>
+          <button
+            class="btn"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#wishlist"
+            aria-controls="wishlist"
+          >
             <i class="fa-regular fa-heart fs-1"></i>
           </button>
-          
-          <Wishlist :id="user.id"/>
+          <button class="btn" @click="logout">
+            <i class="fa-solid fa-right-from-bracket fs-1"></i>
+          </button>
+
+          <Wishlist :id="user.id" />
         </div>
-        
-        <div v-else class="d-flex w-25 justify-content-between">
-          <router-link to="/register">Register</router-link>
-          <router-link to="/login">Login</router-link>
+
+        <div v-else class="">
+          <ul class="navbar-nav d-flex">
+            <router-link to="/login"><a class="nav-link">Login</a></router-link>
+            <router-link to="/register"
+              ><a class="nav-link">Register</a></router-link
+            >
+          </ul>
         </div>
       </div>
     </div>
@@ -73,18 +112,38 @@
 </template>
 
 <script>
-import Wishlist from './wishlist.vue';
+import router from "@/router";
+import Wishlist from "./wishlist.vue";
 export default {
   computed: {
     user() {
       return this.$store.state.user;
-    }
+    },
+    admin() {
+      return this.$store.state.admin;
+    },
   },
-  components: { Wishlist }
+  mounted() {
+    this.$store.commit("setAdmin");
+  },
+  methods: {
+    logout() {
+      this.$store.state.user = null;
+      this.$store.state.token = null;
+      this.$store.state.cart = null;
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      router.push("/");
+    },
+  },
+  components: { Wishlist },
 };
 </script>
 
 <style scoped>
+nav {
+  overflow-x: hidden;
+}
 .offcanvas-header img {
   width: 260px;
   height: 230px;
@@ -94,7 +153,7 @@ export default {
 
 .Navbar {
   background-color: rgb(121, 6, 27);
-  height: 70px;
+  min-height: 70px;
 }
 
 .navbar-toggler {
@@ -127,8 +186,7 @@ a {
   height: 30px;
   width: 30px;
 }
-.Navbar a.router-link-exact-active{
- filter: invert();
-
+.Navbar a.router-link-exact-active {
+  filter: invert();
 }
 </style>

@@ -14,7 +14,7 @@
             <p>About us</p>
             
           </router-link>
-          <router-link to="/contact us">
+          <router-link to="/contact">
             <p>Feedback</p>
             
           </router-link>

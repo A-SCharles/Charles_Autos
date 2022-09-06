@@ -9,17 +9,17 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/about.vue"),
   },
+  // {
+  //   path: "/about",
+  //   name: "about",
+  //   component: () => import("../views/AboutView.vue"),
+  // },
   {
-    path: "/contacts",
-    name: "contacts",
+    path: "/contact",
+    name: "contact",
     component: () => import("../views/ContactsView.vue"),
-  },
-  {
-    path: "/contactUs",
-    name: "contactsUs",
-    component: () => import("../views/ContactUsView.vue"),
   },
   {
     path: "/all",

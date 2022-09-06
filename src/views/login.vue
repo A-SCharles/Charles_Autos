@@ -2,8 +2,8 @@
   <section id="login">
     <div class="container">
       <div class="row d-flex justify-content-center align-content-center">
-        <form @submit="login" class="border border-dark p-5 rounded-5">
-          <h2 class="display-3 fw-bolder text-center mb-4">𝕃𝕠𝕘𝕚𝕟</h2>
+        <form @submit="login" class="text-light border border-dark p-5 rounded-5 w-75">
+          <h2 class="display-3  fw-bolder text-center mb-4">𝕃𝕠𝕘𝕚𝕟</h2>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"
               >Email address</label
@@ -35,7 +35,7 @@
           </router-link>
           </div>
           
-          <button type="submit" class="btn">
+          <button type="submit" class="btn d-flex justify-content-center mx-auto">
             Submit
           </button>
         </form>
@@ -77,12 +77,14 @@ export default {
 #login {
   min-height: 100vh;
   background-image: url("https://i.postimg.cc/J0sVdrdq/car-driving-18.gif");
-  /* background-size: cover;
+  background-size: cover;
+  background-position: center;
+  /*
   background-repeat: no-repeat; */
   
 }
 .container{
-  width:300px;
+  /* width:300px; */
   color:rgb(81, 80, 80);
   
 }
@@ -116,6 +118,7 @@ form{
 input{
   border-width:1px;
   background-color: black;
+  color: white;
   border-color: rgb(228, 2, 25);
 }
 </style>

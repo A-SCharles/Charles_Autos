@@ -1,4 +1,7 @@
-import { createStore } from "vuex";
+import router from "@/router";
+import {
+  createStore
+} from "vuex";
 
 export default createStore({
   state: {
@@ -27,18 +30,25 @@ export default createStore({
       // console.log(user);
     },
     setwishlist: (state, list) => {
-      if(list === null) {
+      if (list === null) {
         state.wishlist = null;
       } else {
-      state.wishlist = list;
-      // console.log(list);
-    }
+        state.wishlist = list;
+        // console.log(list);
+      }
     },
     setToken: (state, token) => {
       state.token = token;
       localStorage.setItem("token", token);
       // console.log(token);
     },
+    setAdmin(state) {
+      if (state.user != null) {
+        if (state.user.usertype === "admin") {
+          state.admin = true
+        }
+      }
+    }
   },
   actions: {
     // cars
@@ -58,13 +68,13 @@ export default createStore({
     },
     addCar: async (context, payload) => {
       await fetch("http://localhost:3000/cars", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -74,13 +84,13 @@ export default createStore({
     },
     editCar: async (context, car) => {
       await fetch("http://localhost:3000/cars/" + car.id, {
-        method: "PUT",
-        body: JSON.stringify(car),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          method: "PUT",
+          body: JSON.stringify(car),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -90,12 +100,12 @@ export default createStore({
     },
     deleteCar: async (context, id) => {
       await fetch("http://localhost:3000/cars/" + id, {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -106,12 +116,12 @@ export default createStore({
     //user
     register: async (context, payload) => {
       await fetch("http://localhost:3000/users", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -121,41 +131,46 @@ export default createStore({
     },
     login: async (context, payload) => {
       await fetch("http://localhost:3000/users", {
-        method: "PATCH",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          method: "PATCH",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
-          context.state.msg = data.msg;
-          context.commit("setUser", data.user);
-          context.commit("setToken", data.token);
+          if (data.msg === "Login Successful") {
+            context.state.msg = data.msg;
+            context.commit("setUser", data.user);
+            context.commit("setToken", data.token);
+            router.push('/')
+          } else {
+            context.state.msg = data.msg;
+          }
         });
     },
     getUser: (context, user) => {
       fetch("http://localhost:3000/users/" + user)
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        context.state.msg = data.msg
-        context.commit("setUser", data.results[0]);
-      })
+        .then((res) => res.json())
+        .then((data) => {
+          // console.log(data);
+          context.state.msg = data.msg
+          context.commit("setUser", data.results[0]);
+        })
     },
     editUser: async (context, user) => {
-    //  user = toRaw(user);
-    //  console.log(user.id);
+      //  user = toRaw(user);
+      //  console.log(user.id);
       await fetch("http://localhost:3000/users/" + user.id, {
-        method: "PUT",
-        body : JSON.stringify(user),
-        headers : {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        }
-      })
+          method: "PUT",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          }
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -164,13 +179,13 @@ export default createStore({
         });
     },
     editUserPassword: async (context, user) => {
-      await fetch("http://localhost:3000/users/" + user.id+ "/pass", {
-        method: "PUT",
-        headers : {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        }
-      })
+      await fetch("http://localhost:3000/users/" + user.id + "/pass", {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          }
+        })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -178,12 +193,12 @@ export default createStore({
     },
     deleteUser: async (context, id) => {
       await fetch("http://localhost:3000/users/" + id, {
-        method: "DELETE",
-        headers : {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        }
-      })
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          }
+        })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -194,18 +209,17 @@ export default createStore({
     getWishlist: async (context, id) => {
       // id = context.state.user.id
       await fetch("http://localhost:3000/users/" + id + "/wishlist", {
-        method: "GET",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          method: "GET",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data)
           if (data != null) {
-            context.commit("setwishlist", JSON.parse
-            (data));
+            context.commit("setwishlist", JSON.parse(data));
           } else {
             context.commit("setwishlist", null);
           }
@@ -215,13 +229,13 @@ export default createStore({
       id = context.state.user.id;
       console.log(item);
       await fetch("http://localhost:3000/users/" + id + "/wishlist", {
-        method: "POST",
-        body: JSON.stringify(item),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          method: "POST",
+          body: JSON.stringify(item),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -231,12 +245,12 @@ export default createStore({
     },
     clearWishlist: async (context, id) => {
       await fetch("http://localhost:3000/users/" + id + "/wishlist", {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -247,15 +261,14 @@ export default createStore({
     deleteWishlistItem: async (context, list, id) => {
       id = context.state.user.id;
       await fetch(
-        "http://localhost:3000/users/" + id + "/wishlist/" + list.wishlistid,
-        {
-          method: "DELETE",
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            "x-auth-token": context.state.token,
-          },
-        }
-      )
+          "http://localhost:3000/users/" + id + "/wishlist/" + list.wishlistid, {
+            method: "DELETE",
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+              "x-auth-token": context.state.token,
+            },
+          }
+        )
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);

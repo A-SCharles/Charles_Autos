@@ -1,128 +1,205 @@
 <template>
-  <div>
+  <!-- <div>
     <div class="container1">
-  <figure>
-              <img src="https://i.postimg.cc/x8fNMSqN/ed1c8714-ac64-4a7a-bf1d-23fc55279a60.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/tCgVgyLL/Follow-Mahi-87-Writes-Like-Share-Comments.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/kXhR6zCD/idk-how-to-make-this-my-wallpaper-please-help.jpg" style="height:490px; width:296px">
-              <img src="https://i.postimg.cc/L8YYzD4D/Image-in-Cars-collection-by-Bellus-Culpa-on-We-Heart-It.jpg" style="height:490px; width:296px">
-              <img src="https://i.postimg.cc/Jnwbygbj/Rides.jpg" style="height:490px; width:296px">  
-          </figure>
+      <figure>
+        <img
+          src="https://i.postimg.cc/x8fNMSqN/ed1c8714-ac64-4a7a-bf1d-23fc55279a60.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/tCgVgyLL/Follow-Mahi-87-Writes-Like-Share-Comments.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/kXhR6zCD/idk-how-to-make-this-my-wallpaper-please-help.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/L8YYzD4D/Image-in-Cars-collection-by-Bellus-Culpa-on-We-Heart-It.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/Jnwbygbj/Rides.jpg"
+          style="height: 490px; width: 296px"
+        />
+      </figure>
       <div id="card">
-          <figure>
-              <img src="https://i.postimg.cc/zfTyQfgR/Nissan-Skyline-R32.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/9MVDHjdg/Pin-by-Connor-on-Music-Trippy-iphone-wallpaper-Asap-rocky-wallpaper-Iphone-wallpaper-vintage.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/P5gLKDPj/Pin-em-Cars-Car-Meets.jpg" style="height:490px; width:296px">
-              <img src="https://i.postimg.cc/KzNRZsQG/Retro-Aesthetic-City-Wallpapers-Wallpaper-Safari.jpg" style="height:490px; width:296px">
-              <img src="https://i.postimg.cc/cChYbLPc/Supra-A80.jpg" style="height:490px; width:296px"> 
-          </figure>
+        <figure>
+          <img
+            src="https://i.postimg.cc/zfTyQfgR/Nissan-Skyline-R32.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/9MVDHjdg/Pin-by-Connor-on-Music-Trippy-iphone-wallpaper-Asap-rocky-wallpaper-Iphone-wallpaper-vintage.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/P5gLKDPj/Pin-em-Cars-Car-Meets.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/KzNRZsQG/Retro-Aesthetic-City-Wallpapers-Wallpaper-Safari.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/cChYbLPc/Supra-A80.jpg"
+            style="height: 490px; width: 296px"
+          />
+        </figure>
       </div>
     </div>
     <div class="container2">
-  <figure>
-              <img src="https://i.postimg.cc/Wb9gmtGN/wallpaper-duvarka-d-landscape-manzara-car-araba-classic-klasik-sunset-g-nbat-m-k-rm-z-red.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/Yq2QmQmD/21309c01-:469-4909-bc3a-dbbc032b76b6.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/nhgm55SN/2b235c67-42f3-405d-8f40-8f5faaf17fc7.jpg" style="height:490px; width:296px">
-              <img src="https://i.postimg.cc/0jPDnwXQ/5cb5901a-bf7f-4b70-8084-13fc67103d6d.jpg" style="height:490px; width:296px"> 
-              <img src="https://i.postimg.cc/Pxm11449/Telegram-Contact-morocca-Best-jdm-cars-Jdm-wallpaper-Car-wallpapers.jpg" style="height:490px; width:296px">
-          </figure>
+      <figure>
+        <img
+          src="https://i.postimg.cc/Wb9gmtGN/wallpaper-duvarka-d-landscape-manzara-car-araba-classic-klasik-sunset-g-nbat-m-k-rm-z-red.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/Yq2QmQmD/21309c01-:469-4909-bc3a-dbbc032b76b6.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/nhgm55SN/2b235c67-42f3-405d-8f40-8f5faaf17fc7.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/0jPDnwXQ/5cb5901a-bf7f-4b70-8084-13fc67103d6d.jpg"
+          style="height: 490px; width: 296px"
+        />
+        <img
+          src="https://i.postimg.cc/Pxm11449/Telegram-Contact-morocca-Best-jdm-cars-Jdm-wallpaper-Car-wallpapers.jpg"
+          style="height: 490px; width: 296px"
+        />
+      </figure>
       <div id="card">
-          <figure>
-              <img src="https://i.postimg.cc/Xv5508Tq/96564325-0c37-44c5-b6a7-925c5efcc9cb.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/cHM8vJ1N/Ah.jpg" style="height:490px; width:296px;">
-              <img src="https://i.postimg.cc/xCSzjm2R/B-M-W.jpg" style="height:490px; width:296px">
-              <img src="https://i.postimg.cc/VkdMK1gj/image.jpg" style="height:490px; width:296px">
-              <img src="https://i.postimg.cc/h419j2h7/Gtr-r34-supra-Video-Nissan-skyline-gtr-Modified-cars-Drift-cars.jpg" style="height:490px; width:296px">
-          </figure>
+        <figure>
+          <img
+            src="https://i.postimg.cc/Xv5508Tq/96564325-0c37-44c5-b6a7-925c5efcc9cb.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/cHM8vJ1N/Ah.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/xCSzjm2R/B-M-W.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/VkdMK1gj/image.jpg"
+            style="height: 490px; width: 296px"
+          />
+          <img
+            src="https://i.postimg.cc/h419j2h7/Gtr-r34-supra-Video-Nissan-skyline-gtr-Modified-cars-Drift-cars.jpg"
+            style="height: 490px; width: 296px"
+          />
+        </figure>
       </div>
     </div>
-  </div>
-  </template>
-  
-  <style scoped>
-  #card2{
-      height:70vh;
-      width:100%;
-      overflow:hidden;
-      position:relative;
-      float:left;
+  </div> -->
+
+  <section id="landing">
+    <div class="container">
+      <div class="row vh-100 d-flex justify-content-center align-content-center mx-auto">
+        <div class="col-md-12 mx-auto">
+          <h2>Welcome to</h2>
+          <h1>Charles Autos</h1>
+        </div>
+        <div class="col-md-12 mx-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+#landing {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+/* #card2 {
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+#card2 figure {
+  position: absolute;
+  height: 300%;
+  animation: 5s slide ease-in-out infinite;
+}
+
+#card {
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  float: right;
+}
+#card figure {
+  position: absolute;
+  height: 300%;
+  animation: 5s Slide ease-in-out infinite;
+}
+.container2 {
+  margin-top: -3%;
+  height: 65vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  float: right;
+}
+.container2 figure {
+  position: absolute;
+  height: 300%;
+}
+.container1 {
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  float: right;
+}
+.container1 figure {
+  position: absolute;
+  height: 300%;
+}
+
+@keyframes slide {
+  from {
+    top: 0%;
   }
-  #card2 figure {
-    position: absolute;
-    height: 300%;
-    animation: 5s slide ease-in-out infinite;
+  to {
+    bottom: 190%;
   }
-  
-  #card{
-      height:70vh;
-      width:100%;
-      overflow:hidden;
-      position:relative;
-      float:right;
+}
+figure {
+  margin: 0px;
+}
+.container {
+  height: 65vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  --bs-gutter-x: 0rem;
+}
+.container figure {
+  position: absolute;
+  width: 100%;
+}
+@keyframes Slide {
+  from {
+    top: 0%;
   }
-  #card figure{
-    position: absolute;
-    height: 300%;
-    animation: 5s Slide ease-in-out infinite;
+  to {
+    bottom: 100%;
   }
-  .container2{
-    margin-top: -3%;
-      height:65vh;
-      width:100%;
-      overflow:hidden;
-      position:relative;
-      float:right;
-  }
-  .container2 figure {
-    position: absolute;
-    height: 300%;
-  }
-  .container1{
-      height:70vh;
-      width:100%;
-      overflow:hidden;
-      position:relative;
-      float:right;
-  }
-  .container1 figure {
-    position: absolute;
-    height: 300%;
-  }
-  
-  @keyframes slide {
-    from{
-      top:0%;
-    }
-    to{
-      bottom: 190%;
-    }
-  }
-  figure{
-    margin:0px;
-  }
-  .container{
-      height:65vh;
-      width:100%; 
-      overflow:hidden;
-      position:relative;
-      float:left;
-      --bs-gutter-x:0rem;
-  }
-  .container figure{
-    position: absolute;
-    width: 100%;
-  }
-  @keyframes Slide {
-    from{
-      top:0%;
-    }
-    to{
-      bottom: 100%;
-    }
-  }
-  
-  </style>
-  <!-- https://i.postimg.cc/Wb9gmtGN/wallpaper-duvarka-d-landscape-manzara-car-araba-classic-klasik-sunset-g-nbat-m-k-rm-z-red.jpg
+} */
+</style>
+<!-- https://i.postimg.cc/Wb9gmtGN/wallpaper-duvarka-d-landscape-manzara-car-araba-classic-klasik-sunset-g-nbat-m-k-rm-z-red.jpg
   https://i.postimg.cc/Yq2QmQmD/21309c01-e469-4909-bc3a-dbbc032b76b6.jpg
   https://i.postimg.cc/nhgm55SN/2b235c67-42f3-405d-8f40-8f5faaf17fc7.jpg
   https://i.postimg.cc/0jPDnwXQ/5cb5901a-bf7f-4b70-8084-13fc67103d6d.jpg

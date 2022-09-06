@@ -2,13 +2,11 @@
   <div id="profile">
     <div class="container" v-if="user">
       <div class="card border-0">
-        <div class="row d-flex justify-content-center align-content-center">
-          <div class="col-md-6 mx-auto">
-            <img class="mx-auto img-fluid rounded-circle" :src="user.profile" />
-            <h2 class="mx-auto">User : {{ user.username }}</h2>
-          </div>
-          <div class="col-md-6 mx-auto">
-            <form class="bg-danger shadow-lg p-5 rounded-5 my-auto">
+        <div
+          class="row py-5 d-flex justify-content-center align-content-center"
+        >
+          <div class="col-md-6 me-auto">
+            <form class="shadow-lg p-5 rounded-5 my-auto text-light">
               <h2 class="text-center">My Details</h2>
 
               <p class="text-center">
@@ -20,7 +18,7 @@
                   aria-expanded="false"
                   aria-controls="collapseExample"
                 >
-                 View Details
+                  View Details
                 </button>
               </p>
 
@@ -100,15 +98,15 @@
       </div>
     </div>
     <div v-else>
-      <Loader/>
+      <Loader />
     </div>
   </div>
 </template>
 
 <script>
-import Loader from "@/components/loading.vue"
+import Loader from "@/components/loading.vue";
 export default {
-  components:{Loader},
+  components: { Loader },
   computed: {
     user() {
       return this.$store.state.user;
@@ -120,23 +118,18 @@ export default {
 <style scoped>
 #profile {
   min-height: 100vh;
-  background-image: url("https://i.postimg.cc/TwfCHkzD/347139.jpg");
+  background-image: url("https://i.postimg.cc/3NmPhQSW/peter-broomfield-m3m-ln-R90u-M-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.row {
-  min-height: 100vh;
-}
-
 .card {
   background-color: var(--color-);
   /*
   /* border-width: 0px; */
 }
 
-.row {
-  /* background:green; */
+form {
+  background-color: rgb(121, 6, 27);
 }
 </style>
 <!-- filter/sort
