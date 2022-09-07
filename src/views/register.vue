@@ -36,7 +36,7 @@
             />
           </div>
 
-          <button type="submit" class="btn w-50 d-flex justify-content-center mx-auto">
+          <button type="submit" class="btn w-100 d-flex justify-content-center mx-auto">
             Submit
           </button>
         </form>
@@ -115,11 +115,8 @@ a{
 }
 form{
   background-color:rgb(0, 0, 0)
+}
 
-}
-h2{
-  font-size:55px;
-}
 input{
   border-width:1px;
   background-color: black;

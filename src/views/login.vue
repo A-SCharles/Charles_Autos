@@ -35,7 +35,7 @@
           </router-link>
           </div>
           
-          <button type="submit" class="btn d-flex justify-content-center mx-auto">
+          <button type="submit" class="btn d-flex justify-content-center mx-auto w-100">
             Submit
           </button>
         </form>
@@ -105,7 +105,7 @@ a{
 .btn{
   background-color: rgb(0, 0, 0);
   height:40px;
-  width:202px;
+  /* width:202px; */
   color:rgb(223, 4, 4);
   font-weight:bold
 }
