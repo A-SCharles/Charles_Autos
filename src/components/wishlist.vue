@@ -1,7 +1,7 @@
 <template>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="wishlist" aria-labelledby="wishlist">
         <div class="offcanvas-header">
-            <h2 class="offcanvas-title mx-auto" id="wishlistTitle">𝕎𝕚𝕤𝕙𝕝𝕚𝕤𝕥</h2>
+            <h2 class="offcanvas-title mx-auto">𝕎𝕚𝕤𝕙𝕝𝕚𝕤𝕥</h2>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -92,8 +92,9 @@ a {
 }
 
 .offcanvas-title {
-    color: rgb(144, 2, 2);
-    font-weight: bold
+    /* color: rgb(144, 2, 2); */
+    color: white;
+    /* font-weight: bold */
 }
 
 /* .btn {

@@ -1,7 +1,8 @@
 <template>
     <section id="products">
+        <div class="container p-5">
+            <h2 class="text-white text-center fs-1 fw-bold">All Products</h2>
         <div v-if="cars">
-            <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <h2 class="text-light">Filter & Sort</h2>
@@ -54,14 +55,14 @@
 
                 <!-- </div> -->
                 <!-- <div class="row mx-auto"> -->
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <Cars v-for="car in cars" :key="car" :car="car" />
                     </div>
                 </div>
             </div>
-        </div>
-        <div v-else>
-            <Loading />
+            <div v-else>
+                <Loading />
+            </div>
         </div>
     </section>
 </template>
@@ -102,6 +103,7 @@ export default {
     },
     mounted() {
         this.$store.dispatch("getCars")
+        this.$store.state.car = null
     },
     methods: {
         sortManu() {
@@ -135,8 +137,9 @@ export default {
 #products {
     overflow-x: hidden;
     min-height: 100vh;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    /* padding-top: 50px;
+    padding-bottom: 50px; */
+    /* background-image: url("https://i.postimg.cc/76NWCCF2/6425712.jpg"); */
     background-image: url("https://i.postimg.cc/J0HXFvCr/logo1.png");
     background-attachment: fixed;
     background-size: cover;

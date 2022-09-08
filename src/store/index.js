@@ -161,9 +161,11 @@ export default createStore({
             context.commit("setUser", data.user);
             context.commit("setToken", data.token);
             context.dispatch('setAdmin')
-            router.push("/");
           } else {
             context.state.msg = data.msg;
+            setTimeout(() => {
+            context.state.msg = null;
+            }, 3000);
           }
         });
     },

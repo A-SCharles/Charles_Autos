@@ -6,8 +6,7 @@
           <h2 class="display-3  fw-bolder text-center mb-4">𝕃𝕠𝕘𝕚𝕟</h2>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
+              >Email address</label>
             <input
               v-model="email"
               type="email"
@@ -16,6 +15,10 @@
               aria-describedby="emailHelp"
               placeholder="Enter Email" required
             />
+
+            <div v-if="msg === 'email not found'" class="text-center m-5">
+          <h2>{{ msg }}</h2>
+        </div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
@@ -27,6 +30,9 @@
               class="form-control"
               placeholder="Enter Password" required
             />
+            <div v-if="msg === 'Password Incorrect'" class="text-center m-5">
+          <h2>{{ msg }}</h2>
+        </div>
           </div>
           <div class="reg">
              <router-link to="/register">
@@ -39,9 +45,6 @@
             Submit
           </button>
         </form>
-        <div v-if="msg" class="text-center m-5">
-          <h2>{{ msg }}</h2>
-        </div>
       </div>
     </div>
   </section>

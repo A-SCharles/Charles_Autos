@@ -1,8 +1,8 @@
 <template>
     <section id="users">
         <div class="container text-center p-5">
-            <h2 class="text-center">Users 𝕋𝕒𝕓𝕝𝕖</h2>
-            <table class="table table-hover text-white">
+            <h2 class="text-center">𝕌𝕤𝕖𝕣𝕤 𝕋𝕒𝕓𝕝𝕖</h2>
+            <table class="table table-hover text-white my-5">
                 <thead>
                     <tr>
                         <th scope="col">#id</th>
@@ -77,6 +77,14 @@ export default {
     background-color: rgb(64, 63, 63);
     color: white;
     min-height: 100vh;
+    font-size: larger;
+}
+
+h2 {
+  color: black;
+  font-size: 50px;
+  /* font-weight: bold; */
+  color: white;
 }
 
 td a {
@@ -84,6 +92,6 @@ td a {
 }
 
 td:hover {
-    color: aqua !important;
+    color: white !important;
 }
 </style>

@@ -68,7 +68,7 @@
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="button" @click="addProd" class="btn btn-primary" data-bs-dismiss="modal">
+          <button type="button" @click="addProd" class="btn" data-bs-dismiss="modal">
             Add Product
           </button>
         </div>
@@ -109,5 +109,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+  .btn{
+  background-color: rgb(0, 0, 0);
+  height:40px;
+  /* width:202px; */
+  color:rgb(223, 4, 4);
+  font-weight:bold
+}
 </style>

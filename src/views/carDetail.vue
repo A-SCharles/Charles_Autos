@@ -1,7 +1,7 @@
 <template>
   <section id="single">
-    <div v-if="car">
-      <div class="container">
+    <div class="container">
+        <div v-if="car">
         <!-- <div class="card"> -->
         <div class="row">
           <div class="col1">
@@ -45,11 +45,11 @@
 
         </div>
       </div>
+      <div class="else" v-else>
+        <Loader />
+      </div>
     </div>
     <!-- </div> -->
-    <div v-else>
-      <Loader />
-    </div>
   </section>
 </template>
 

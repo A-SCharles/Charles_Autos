@@ -1,13 +1,14 @@
 <template>
   <div id="admin">
     <div class="container text-center p-5">
-      <h2 class="text-center">ℂ𝕒𝕣𝕤 𝕋𝕒𝕓𝕝𝕖</h2>
-      <table class="table table-hover text-white">
+      <h2 class="text-center text-light">ℂ𝕒𝕣𝕤 𝕋𝕒𝕓𝕝𝕖</h2>
+      <table class="table table-hover text-white my-5">
         <thead>
-          <tr class="text-start">
+          <tr class="text-start text-white">
             <th scope="col">#id</th>
             <th scope="col">Manufacturer</th>
             <th scope="col">Model</th>
+            <th scope="col">Body Style</th>
             <th scope="col">Price</th>
             <th scope="col" class="text-center">
               <a
@@ -24,11 +25,16 @@
           <tr class="text-start" v-for="car in cars" :key="car.id">
             <td>{{ car.id }}</td>
             <td>
-            <router-link :to="{name: 'singleAdmin', params : {id: car.id}}">
-              {{ car.manufacturer }}
-            </router-link>
+              <a class="link">
+                <router-link
+                  :to="{ name: 'singleAdmin', params: { id: car.id } }"
+                >
+                  {{ car.manufacturer }}
+                </router-link>
+              </a>
             </td>
             <td>{{ car.model }}</td>
+            <td>{{ car.bodystyle }}</td>
             <td>R{{ car.MSRP }}.00</td>
             <td class="text-center">
               <a
@@ -46,7 +52,7 @@
           </tr>
         </tbody>
         <tbody v-else>
-          <Loader/>
+          <Loader />
         </tbody>
       </table>
     </div>
@@ -65,7 +71,7 @@
 <script>
 import AddModal from "@/components/addModal.vue";
 import UpdateModal from "@/components/updateModal.vue";
-import Loader from "@/components/loading.vue"
+import Loader from "@/components/loading.vue";
 export default {
   computed: {
     cars() {
@@ -84,35 +90,34 @@ export default {
 
 <style scoped>
 #admin {
+  /* overflow-x: hidden; */
   min-height: 100vh;
   background-color: rgb(64, 63, 63);
   color: white;
+  font-size: larger;
 }
-i{
-  color:white
+i {
+  color: white;
 }
-a{
+a {
   text-decoration: none;
   /* color:rgb(137, 9, 9); */
-  color:black;
+  color: black;
   font-weight: bold;
 }
-a:hover{
-  text-decoration: underline;
-  /* color:rgb(137, 9, 9); */
-  color:black;
-  font-weight: bold;
+
+thead {
+  color: black;
+  font-size: 20px;
 }
-thead{
-  color:black;
-  font-size:20px
+h2 {
+  color: black;
+  font-size: 50px;
+  /* font-weight: bold; */
 }
-h2{
-  color:black;
-  font-size:50px;
-  font-weight: bold;
-}
-td:hover{
-color:yellow !important
+
+
+td:hover {
+  color: white !important;
 }
 </style>

@@ -11,7 +11,7 @@
 
               <p class="text-center">
                 <button
-                  class="btn btn-primary mt-5"
+                  class="btn mt-5"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseExample"
@@ -85,7 +85,7 @@
                   </div>
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    class="btn m-3"
                     @click="this.$store.dispatch('editUser', user)"
                   >
                     Update Details
@@ -93,7 +93,7 @@
 
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    class="btn"
                     @click="this.$store.dispatch('deleteUser', user.id)"
                   >
                     Delete Account
@@ -134,6 +134,13 @@ export default {
   background-color: var(--color-);
   /*
   /* border-width: 0px; */
+}
+
+.btn{
+  background-color: rgb(0, 0, 0);
+  height:40px;
+  color:rgb(223, 4, 4);
+  font-weight:bold
 }
 
 form {

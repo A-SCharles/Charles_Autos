@@ -1,9 +1,11 @@
 <template>
   <nav class="Navbar sticky-top">
     <div class="navbar container">
-      <router-link :to="{ name: 'home' }" class="text-decoration-none">
-        <a class="navbar-brand"> ℂ𝕙𝕒𝕣𝕝𝕖𝕤 𝔸𝕦𝕥𝕠𝕤 </a>
-      </router-link>
+      <a class="link navbar-brand">
+        <router-link :to="{ name: 'home' }" class="text-decoration-none">
+          ℂ𝕙𝕒𝕣𝕝𝕖𝕤 𝔸𝕦𝕥𝕠𝕤
+        </router-link>
+      </a>
 
       <div
         class="offcanvas offcanvas-start"
@@ -25,17 +27,18 @@
               <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
                 <div v-if="user">
                   <router-link
-                    :to="{ name: 'profile'}"
+                    :to="{ name: 'profile' }"
                     :user="user"
-                    class="text-decoration-none"
+                    class="text-decoration-none text-center link"
                   >
-                    <img class="rounded-circle"
+                    <img
+                      class="rounded-circle"
                       data-bs-dismiss="offcanvas"
                       src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg"
                     />
-                    <h2 data-bs-dismiss="offcanvas" class="text-center">
-                      View Profile
-                    </h2>
+                    <a data-bs-dismiss="offcanvas" class="text-center">
+                      𝕍𝕚𝕖𝕨 ℙ𝕣𝕠𝕗𝕚𝕝𝕖
+                    </a>
                   </router-link>
                 </div>
               </h5>
@@ -47,28 +50,48 @@
             data-bs-dismiss="offcanvas"
             class="navbar-nav justify-content-end flex-grow-1 pe-3"
           >
-            <router-link :to="{ name: 'home' }" class="text-decoration-none">
-              <a class="navbar-brand"> ℍ𝕠𝕞𝕖 </a>
-            </router-link>
-            <router-link :to="{ name: 'about' }" class="text-decoration-none">
-              <a class="navbar-brand"> 𝔸𝕓𝕠𝕦𝕥 </a>
-            </router-link>
-            <router-link :to="{ name: 'all' }" class="text-decoration-none">
-              <a class="navbar-brand"> ℙ𝕣𝕠𝕕𝕦𝕔𝕥𝕤 </a>
-            </router-link>
-            <router-link :to="{ name: 'contact' }" class="text-decoration-none">
-              <a class="navbar-brand"> ℂ𝕠𝕟𝕥𝕒𝕔𝕥 </a>
-            </router-link>
+            <a class="navbar-brand link">
+              <router-link :to="{ name: 'home' }" class="text-decoration-none">
+                ℍ𝕠𝕞𝕖
+              </router-link>
+            </a>
+            <a class="navbar-brand link">
+              <router-link :to="{ name: 'about' }" class="text-decoration-none">
+                𝔸𝕓𝕠𝕦𝕥
+              </router-link>
+            </a>
+            <a class="navbar-brand link">
+              <router-link :to="{ name: 'all' }" class="text-decoration-none">
+                ℙ𝕣𝕠𝕕𝕦𝕔𝕥𝕤
+              </router-link>
+            </a>
+            <a class="navbar-brand link">
+              <router-link
+                :to="{ name: 'contact' }"
+                class="text-decoration-none"
+              >
+                ℂ𝕠𝕟𝕥𝕒𝕔𝕥
+              </router-link>
+            </a>
 
-            <div v-if="admin">
-              <router-link :to="{ name: 'admin' }" class="text-decoration-none">
-                <a class="navbar-brand"> 𝔸𝕕𝕞𝕚𝕟</a>
-              </router-link>
-              <router-link :to="{ name: 'users' }" class="text-decoration-none">
-                <a class="navbar-brand"> Users</a>
-              </router-link>
+            <div v-if="admin" class="d-flex flex-column">
+              <a class="navbar-brand link">
+                <router-link
+                  :to="{ name: 'admin' }"
+                  class="text-decoration-none"
+                >
+                  𝔸𝕕𝕞𝕚𝕟
+                </router-link>
+              </a>
+              <a class="navbar-brand link">
+                <router-link
+                  :to="{ name: 'users' }"
+                  class="text-decoration-none"
+                >
+                 𝕌𝕤𝕖𝕣𝕤
+                </router-link>
+              </a>
             </div>
-          
           </ul>
         </div>
       </div>
@@ -104,11 +127,13 @@
         </div>
 
         <div v-else class="">
-          <ul class="navbar-nav d-flex">
-            <router-link to="/login"><a class="nav-link">Login</a></router-link>
-            <router-link to="/register"
-              ><a class="nav-link">Register</a></router-link
-            >
+          <ul class="navbar-nav d-flex flex-row">
+            <a class="nav-link mx-2">
+              <router-link to="/login"> Login </router-link>
+            </a>
+            <a class="nav-link mx-2">
+              <router-link to="/register"> Register </router-link>
+            </a>
           </ul>
         </div>
       </div>

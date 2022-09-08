@@ -101,11 +101,12 @@
   <section id="landing">
     <div class="container">
       <div class="row vh-100 d-flex justify-content-center align-content-center mx-auto">
-        <div class="col-md-12 mx-auto">
-          <h2>Welcome to</h2>
-          <h1>Charles Autos</h1>
-        </div>
-        <div class="col-md-12 mx-auto">
+        <div class="col-md-12 text-center mx-auto">
+          <div class="card bg-transparent border-0">
+            <h2 class="display-2 fw-bolder">Welcome to</h2>
+            <h1 class="display-2 fw-bold fst-italic">Charles Autos</h1>
+          </div>
+          <!-- <img class="img-fluid rounded" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" alt=""> -->
         </div>
       </div>
     </div>
@@ -115,9 +116,15 @@
 <style scoped>
 #landing {
   min-height: 100vh;
+  background-image: url("https://i.postimg.cc/PryV2kcW/wallpaperbetter-com-1920x1080.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-color: black;
   color: white;
 }
+
 /* #card2 {
   height: 70vh;
   width: 100%;

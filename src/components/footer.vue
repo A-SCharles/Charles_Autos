@@ -1,24 +1,17 @@
 <template>
   <footer id="footer">
-    <div class="container">
+    <div class="container p-3">
       <div class="row">
-        <div class="col m-3">
-          <h6>
-            Company
-          </h6>
-          <router-link to="/contact">
-            <p>Contact us</p>
-            
-          </router-link>
-          <router-link to="/about">
-            <p>About us</p>
-            
-          </router-link>
-          <router-link to="/contact">
-            <p>Feedback</p>
-            
-          </router-link>
+        <div class="col my-auto m-3 d-flex flex-column">
+          <a class="link fs-3">
+            <router-link to="/contact"> Contact </router-link>
+          </a>
+
+          <a class="link fs-3">
+            <router-link to="/about"> About us </router-link>
+          </a>
         </div>
+
         <div class="col mt-3">
           <h6>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quasi
@@ -60,10 +53,22 @@
           </p>
           <hr />
           <div class="row mx-auto lead text-center">
-            <p>
-              <i class="bi bi-facebook"></i>
-              <i class="bi bi-youtube mx-3"></i>
-              <i class="bi bi-twitter"></i>
+            <p class="fs-3">
+              <a
+                class="mx-3"
+                href="https://github.com/A-SCharles"
+                target="_blank"
+              >
+                <i class="fa fa-github"></i>
+              </a>
+
+              <a
+                class="mx-3"
+                href="https://www.linkedin.com/in/abdus-samad-charles-51bba5227/"
+                target="_blank"
+              >
+                <i class="fa fa-linkedin"></i>
+              </a>
             </p>
           </div>
           <hr />
@@ -79,20 +84,22 @@
 <style scoped>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 #footer {
+  color: white;
   max-height: 10vh;
 }
 .container {
   min-height: fit-content;
   background-color: rgb(99, 6, 9);
   max-width: 100%;
-  color: rgb(13, 8, 9);
 }
 .col {
   /* width:500px; */
   padding: 10px;
 }
 
-h6{
-  margin-top:20px;
+h6 {
+  margin-top: 20px;
 }
+
+
 </style>
