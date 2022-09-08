@@ -4,12 +4,12 @@
       <h2 class="text-center">ℂ𝕒𝕣𝕤 𝕋𝕒𝕓𝕝𝕖</h2>
       <table class="table table-hover text-white">
         <thead>
-          <tr>
+          <tr class="text-start">
             <th scope="col">#id</th>
             <th scope="col">Manufacturer</th>
-            <th scope="col">model</th>
+            <th scope="col">Model</th>
             <th scope="col">Price</th>
-            <th scope="col">
+            <th scope="col" class="text-center">
               <a
                 class="btn"
                 data-bs-toggle="modal"
@@ -21,7 +21,7 @@
           </tr>
         </thead>
         <tbody v-if="cars">
-          <tr v-for="car in cars" :key="car.id">
+          <tr class="text-start" v-for="car in cars" :key="car.id">
             <td>{{ car.id }}</td>
             <td>
             <router-link :to="{name: 'singleAdmin', params : {id: car.id}}">
@@ -30,7 +30,7 @@
             </td>
             <td>{{ car.model }}</td>
             <td>R{{ car.MSRP }}.00</td>
-            <td>
+            <td class="text-center">
               <a
                 class="btn"
                 data-bs-toggle="modal"
@@ -93,7 +93,14 @@ i{
 }
 a{
   text-decoration: none;
-  color:rgb(137, 9, 9);
+  /* color:rgb(137, 9, 9); */
+  color:black;
+  font-weight: bold;
+}
+a:hover{
+  text-decoration: underline;
+  /* color:rgb(137, 9, 9); */
+  color:black;
   font-weight: bold;
 }
 thead{
@@ -105,7 +112,7 @@ h2{
   font-size:50px;
   font-weight: bold;
 }
-tr:hover{
-color:black
+td:hover{
+color:yellow !important
 }
 </style>

@@ -25,7 +25,7 @@
               <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
                 <div v-if="user">
                   <router-link
-                    :to="{ name: 'profile', params: { user: user } }"
+                    :to="{ name: 'profile'}"
                     :user="user"
                     class="text-decoration-none"
                   >
@@ -59,11 +59,16 @@
             <router-link :to="{ name: 'contact' }" class="text-decoration-none">
               <a class="navbar-brand"> ℂ𝕠𝕟𝕥𝕒𝕔𝕥 </a>
             </router-link>
+
             <div v-if="admin">
               <router-link :to="{ name: 'admin' }" class="text-decoration-none">
                 <a class="navbar-brand"> 𝔸𝕕𝕞𝕚𝕟</a>
               </router-link>
+              <router-link :to="{ name: 'users' }" class="text-decoration-none">
+                <a class="navbar-brand"> Users</a>
+              </router-link>
             </div>
+          
           </ul>
         </div>
       </div>
@@ -124,7 +129,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.commit("setAdmin");
+    this.$store.dispatch("setAdmin");
   },
   methods: {
     logout() {

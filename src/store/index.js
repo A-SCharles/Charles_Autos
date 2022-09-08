@@ -8,6 +8,7 @@ export default createStore({
     cars: null,
     car: null,
     user: null || JSON.parse(localStorage.getItem("user")),
+    users: null,
     wishlist: null,
     token: null || localStorage.getItem("token"),
     admin: false,
@@ -29,6 +30,10 @@ export default createStore({
       localStorage.setItem("user", JSON.stringify(user));
       // console.log(user);
     },
+    setUsers: (state, users) => {
+      state.users = users;
+      // console.log(user);
+    },
     setwishlist: (state, list) => {
       if (list === null) {
         state.wishlist = null;
@@ -42,15 +47,18 @@ export default createStore({
       localStorage.setItem("token", token);
       // console.log(token);
     },
-    setAdmin(state) {
-      if (state.user != null) {
-        if (state.user.usertype === "admin") {
-          state.admin = true;
-        }
-      }
-    },
   },
   actions: {
+    setAdmin(context) {
+      if (context.state.user != null) {
+        if (context.state.user.usertype === "admin") {
+          context.state.admin = true;
+        } else {
+          context.state.admin = false;
+        }
+        context.dispatch('getWishlist')
+      }
+    },
     // cars
     getCars: async (context) => {
       await fetch(heroku + "/cars")
@@ -152,6 +160,7 @@ export default createStore({
             context.state.msg = data.msg;
             context.commit("setUser", data.user);
             context.commit("setToken", data.token);
+            context.dispatch('setAdmin')
             router.push("/");
           } else {
             context.state.msg = data.msg;
@@ -166,6 +175,16 @@ export default createStore({
           // console.log(data);
           context.state.msg = data.msg;
           context.commit("setUser", data.results[0]);
+        });
+    },
+    getUsers: async (context) => {
+      await fetch(heroku + "/users")
+        // fetch("http://localhost:3000/users/" + user)
+        .then((res) => res.json())
+        .then((data) => {
+          // console.log(data);
+          context.state.msg = data.msg;
+          context.commit("setUsers", data.results);
         });
     },
     editUser: async (context, user) => {
@@ -189,6 +208,7 @@ export default createStore({
       await fetch(heroku + "/users/" + user.id + "/pass" ,{
         // await fetch("http://localhost:3000/users/" + user.id + "/pass", {
         method: "PUT",
+        body : JSON.stringify(user),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
           "x-auth-token": context.state.token,
@@ -211,12 +231,13 @@ export default createStore({
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          router.push('/')
         });
     },
 
     //wishlist
     getWishlist: async (context, id) => {
-      // id = context.state.user.id
+      id = context.state.user.id
       await fetch(heroku + "/users/" + id + "/wishlist" ,{
         // await fetch("http://localhost:3000/users/" + id + "/wishlist", {
         method: "GET",

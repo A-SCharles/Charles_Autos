@@ -90,6 +90,14 @@
                   >
                     Update Details
                   </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    @click="this.$store.dispatch('deleteUser', user.id)"
+                  >
+                    Delete Account
+                  </button>
                 </div>
               </div>
             </form>
