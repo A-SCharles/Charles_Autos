@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row8">
         <div class="col">
           <figure>
@@ -49,14 +49,14 @@
       </div>
 
       <div class="container">
-        <div class="row p-1">
-          <div class="col-md-6 my-auto">
-            <h1>
-              Welcome to Charles Autos. <br />
+        <div class="row mx-auto p-1">
+          <div class="col-md-6 p-1 my-auto">
+            <h1 class="text-center">
+              Welcome to Charles Autos.
               A Place to Buy AutoMobiles.
             </h1>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 p-2">
             <img
               class="img-fluid"
               src="https://i.postimg.cc/CxMYYj0X/New-2023-Honda-Passport.png"
@@ -71,52 +71,32 @@
 
           <div class="col-md-4 mx-auto img-fluid">
             <img
-              class="img-fluid"
+              class="img-fluid" id="nd"
               src="https://i.postimg.cc/sg2XKFMM/2022-Toyota-Corolla-Apex-Exterior.webp"
             />
           </div>
           <div class="col-md-5 ms-auto text-center" id="middle">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore at
-              necessitatibus perspiciatis eveniet cumque perferendis, possimus
-              molestiae nemo placeat provident adipisci fuga quia enim
-              reiciendis distinctio incidunt, rem laborum accusamus aliquid
-              doloribus molestias. Ipsa laboriosam, maxime voluptate, repellat
-              error fuga eligendi earum voluptas dolores distinctio unde! Omnis
-              quis, cumque provident labore ex veritatis, vero saepe consectetur
-              itaque ipsum placeat quia voluptate atque praesentium eos
-              exercitationem iste.
+              We advertise many different vehicles with different body styles, from different manufacturers.
             </p>
             <p>
-              Our Goal is For Different Cars to be Adverted and Bought by Any
-              And Everyone that visits our Site to want to Atleast Buy or sell a
-              car.
-            </p>
-            <p>
-              Our Goal is For Different Cars to be Adverted and Bought by Any
-              And Everyone that visits our Site to want to Atleast Buy or sell a
-              car.
-            </p>
-            <p>
-              Our Goal is For Different Cars to be Adverted and Bought by Any
-              And Everyone that visits our Site to want to Atleast Buy or sell a
-              car.
+              At Charles-Autos make an effort to understand what the customer wants. We value diversity and treat all people with equal and mutual respect.
             </p>
           </div>
         </div>
 
         <div class="row m-3">
-          <h2 class="col-md-6 my-auto">Our Team</h2>
-          <div class="col-md-6">
+          <h2 class="col-md-6  m-auto">Our Team</h2>
+          <div class="col-md-6 d-lg-flex mx-auto">
             <img
               class="img-fluid rounded-circle"
               id="img"
-              src="https://i.postimg.cc/B6XFQC0q/Transpo-G70-TA-518126.webp"
+              src="https://i.postimg.cc/x8w6tG9m/navLogo.png"
             />
             <img
               class="img-fluid rounded-circle"
               id="img"
-              src="https://i.postimg.cc/pr3pTNBC/Chery-Tiggo-7-Pro-098-1800x1800.jpg"
+              src="https://i.postimg.cc/yYwNW7tJ/s3.jpg"
             />
           </div>
         </div>
@@ -124,7 +104,7 @@
         <div class="row m-3">
           <div class="col-md-2">
             <img
-              class="img-fluid"
+              class="img-fluid" id="rd"
               src="https://i.postimg.cc/sg2XKFMM/2022-Toyota-Corolla-Apex-Exterior.webp"
             />
           </div>
@@ -134,14 +114,9 @@
               Founder
             </h2>
           </div>
-          <div class="col-5">
+          <div class="col-md-5 p-3">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
-              impedit modi harum quaerat vero nihil voluptatum dolore corporis
-              architecto dolores odit quae, alias doloribus sequi dolor
-              temporibus? Illum omnis cum mollitia perspiciatis quas asperiores
-              fugit minus neque accusantium, fugiat excepturi aut a rem quam
-              facere, possimus minima sequi doloremque reprehenderit.
+              Charles-Autos is built on a foundation where we sell your favourite car brands. We know cars are the standard mode of transport, and we are here to help you with that. Our goal is customer satisfaction here at Charles-Autos.
             </p>
           </div>
         </div>
@@ -156,21 +131,49 @@
   padding: 0;
 }
 
-#img {
-  height: 250px;
-  width: auto;
-  border-radius: 50%;
-  margin-left: 30px;
-  margin-right: 6px;
+#about {
+  background-color: black;
+  color: white;
+  overflow-x:hidden ;
 }
+
+#img {
+  height: auto;
+  width: 250px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  /* margin-left: 30px;
+  margin-right: 6px; */
+  object-fit: cover;
+}
+#nd{
+  height:100%;
+  width:auto
+}
+
+.img-fluid {
+  border-radius: 10px;
+}
+
 span #img {
   height: 60px;
   border-radius: 0px;
+}
+h1{
+  color: rgb(145, 1, 20);
+}
+h2{
+  writing-mode: vertical-rl;
+text-orientation: mixed;
 }
 span {
   color: red;
   font-size: 22px;
   font-weight: bolder;
+}
+p{
+  font-size:20px;
+  font-weight:300
 }
 .row8 {
   height: 60px;
@@ -192,6 +195,18 @@ span {
   }
   to {
     transform: translateX(0%);
+  }
+}
+@media screen and (max-width:768px){
+  h2{
+    writing-mode: lr;
+text-orientation: none;
+font-size:30px;
+font-weight:bold;
+margin-bottom:20px;
+  }
+  #img{
+    margin-top:20px;
   }
 }
 </style>

@@ -1,3 +1,7 @@
+
+
+
+
 <template>
   <!-- manufacturer, bodystyle, model, modelyear, MSRP, fueltype, transmission, img -->
   <!-- Modal -->
