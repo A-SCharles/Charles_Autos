@@ -1,6 +1,6 @@
 <template>
   <section id="single">
-    <div class="container">
+    <div v-if="user" class="container">
         <div v-if="car">
         <!-- <div class="card"> -->
         <div class="row">
@@ -49,6 +49,18 @@
         <Loader />
       </div>
     </div>
+    <div v-else>
+      <div class="container">
+        <div class="row vh-100 d-flex justify-content-center align-content-center">
+          <div class="text-center">
+            <h2 class="text-white">Please Login To View Products.</h2>
+            <a class="logs">
+              <router-link to="/">Return To Home Page</router-link>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- </div> -->
   </section>
 </template>
@@ -64,6 +76,9 @@ export default {
     },
     msg() {
       return this.$store.state.msg;
+    },
+    user() {
+      return this.$store.state.user;
     },
   },
   mounted() {
@@ -84,6 +99,11 @@ export default {
 * {
   padding: 0px;
   margin: 0px;
+}
+
+.logs :hover{
+text-decoration: underline;
+transition: .5s;
 }
 
 .container {

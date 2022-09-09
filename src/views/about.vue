@@ -49,11 +49,10 @@
       </div>
 
       <div class="container">
-        <div class="row mx-auto p-1">
+        <div class="row mx-auto m-5 p-1">
           <div class="col-md-6 p-1 my-auto">
             <h1 class="text-center">
-              Welcome to Charles Autos.
-              A Place to Buy AutoMobiles.
+              Welcome to Charles Autos. A Place to Buy AutoMobiles.
             </h1>
           </div>
           <div class="col-md-6 p-2">
@@ -64,60 +63,64 @@
           </div>
         </div>
 
-        <div class="row m-3">
-          <div class="col-md-2">
+        <div class="row m-5 my-auto">
+          <div class="col-md-2 my-auto">
             <h2>About Us</h2>
           </div>
 
           <div class="col-md-4 mx-auto img-fluid">
             <img
-              class="img-fluid" id="nd"
+              class="img-fluid my-auto"
+              id="nd"
               src="https://i.postimg.cc/sg2XKFMM/2022-Toyota-Corolla-Apex-Exterior.webp"
             />
           </div>
-          <div class="col-md-5 ms-auto text-center" id="middle">
+          <div class="col-md-5 ms-auto my-auto text-center" id="middle">
             <p>
-              We advertise many different vehicles with different body styles, from different manufacturers.
+              We advertise many different vehicles with different body styles,
+              from different manufacturers.
             </p>
             <p>
-              At Charles-Autos make an effort to understand what the customer wants. We value diversity and treat all people with equal and mutual respect.
+              At Charles-Autos make an effort to understand what the customer
+              wants. We value diversity and treat all people with equal and
+              mutual respect.
             </p>
           </div>
         </div>
 
-        <div class="row m-3">
-          <h2 class="col-md-6  m-auto">Our Team</h2>
-          <div class="col-md-6 d-lg-flex mx-auto">
+        <div class="row m-5 mx-auto">
+          <div
+            class="col-md-12 d-lg-flex justify-content-between mx-auto text-center"
+          >
+            <h2 class="my-auto">Our Team</h2>
             <img
-              class="img-fluid rounded-circle"
+              class="img-fluid rounded-circle hover"
               id="img"
               src="https://i.postimg.cc/x8w6tG9m/navLogo.png"
             />
             <img
-              class="img-fluid rounded-circle"
+              class="img-fluid rounded-circle hover"
               id="img"
               src="https://i.postimg.cc/yYwNW7tJ/s3.jpg"
             />
           </div>
         </div>
 
-        <div class="row m-3">
-          <div class="col-md-2">
-            <img
-              class="img-fluid" id="rd"
-              src="https://i.postimg.cc/sg2XKFMM/2022-Toyota-Corolla-Apex-Exterior.webp"
-            />
+        <div class="row m-5">
+          <div class="col-md-5 p-3">
+            <p class="text-lg-center">
+              Charles-Autos is built on a foundation where we sell your
+              favourite car brands. We know cars are the standard mode of
+              transport, and we are here to help you with that. Our goal is
+              customer satisfaction here at Charles-Autos.
+            </p>
           </div>
+
           <div class="col-md-5 mx-auto text-center py-auto px-4" id="side">
-            <h2>
+            <h2 class="m-3">
               About Our<br />
               Founder
             </h2>
-          </div>
-          <div class="col-md-5 p-3">
-            <p>
-              Charles-Autos is built on a foundation where we sell your favourite car brands. We know cars are the standard mode of transport, and we are here to help you with that. Our goal is customer satisfaction here at Charles-Autos.
-            </p>
           </div>
         </div>
       </div>
@@ -131,10 +134,20 @@
   padding: 0;
 }
 
+.hover {
+  position: relative;
+  transition-duration: 0.5s;
+}
+
+.hover:hover {
+  opacity: 0.5;
+}
+
+
 #about {
   background-color: black;
   color: white;
-  overflow-x:hidden ;
+  overflow-x: hidden;
 }
 
 #img {
@@ -146,9 +159,9 @@
   margin-right: 6px; */
   object-fit: cover;
 }
-#nd{
-  height:100%;
-  width:auto
+#nd {
+  height: 100%;
+  width: auto;
 }
 
 .img-fluid {
@@ -159,21 +172,22 @@ span #img {
   height: 60px;
   border-radius: 0px;
 }
-h1{
+h1 {
   color: rgb(145, 1, 20);
 }
-h2{
+h2 {
   writing-mode: vertical-rl;
-text-orientation: mixed;
+  text-orientation: mixed;
 }
+
 span {
   color: red;
   font-size: 22px;
   font-weight: bolder;
 }
-p{
-  font-size:20px;
-  font-weight:300
+p {
+  font-size: 20px;
+  font-weight: 300;
 }
 .row8 {
   height: 60px;
@@ -197,16 +211,16 @@ p{
     transform: translateX(0%);
   }
 }
-@media screen and (max-width:768px){
-  h2{
+@media screen and (max-width: 768px) {
+  h2 {
     writing-mode: lr;
-text-orientation: none;
-font-size:30px;
-font-weight:bold;
-margin-bottom:20px;
+    text-orientation: none;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
-  #img{
-    margin-top:20px;
+  #img {
+    margin-top: 20px;
   }
 }
 </style>

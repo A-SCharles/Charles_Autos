@@ -41,6 +41,10 @@
           </router-link>
           </div>
           
+          <div v-if="msg === 'Login Successful'" class="text-center m-5">
+          <h2>{{ msg }}</h2>
+        </div>
+
           <button type="submit" class="btn d-flex justify-content-center mx-auto w-100">
             Submit
           </button>

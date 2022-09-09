@@ -1,6 +1,6 @@
 <template>
-  <div id="admin">
-    <div class="container text-center p-5">
+  <section id="admin">
+    <div v-if="admin" class="container text-center p-5">
       <h2 class="text-center text-light">ℂ𝕒𝕣𝕤 𝕋𝕒𝕓𝕝𝕖</h2>
       <table class="table table-hover text-white my-5">
         <thead>
@@ -56,7 +56,18 @@
         </tbody>
       </table>
     </div>
-    
+    <div v-else>
+      <div class="container">
+        <div class="row vh-100 d-flex justify-content-center align-content-center">
+          <div class="text-center">
+            <h2>Only Admins Are Allowed Here, Sorry.</h2>
+            <a class="btn">
+              <router-link to="/">Return To Home Page</router-link>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- modals -->
     <div v-if="cars">
       <AddModal />
@@ -65,7 +76,7 @@
         <UpdateModal :car="car" />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -79,6 +90,9 @@ export default {
     },
     loader() {
       return this.$store.state.loader;
+    },
+    admin() {
+      return this.$store.state.admin;
     },
   },
   mounted() {

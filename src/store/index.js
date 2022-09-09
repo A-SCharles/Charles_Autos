@@ -1,5 +1,7 @@
 import router from "@/router";
-import { createStore } from "vuex";
+import {
+  createStore
+} from "vuex";
 
 const heroku = "https://charlesautosapi.herokuapp.com";
 
@@ -78,47 +80,53 @@ export default createStore({
     },
     addCar: async (context, payload) => {
       await fetch(heroku + "/cars", {
-        // await fetch("http://localhost:3000/cars", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          // await fetch("http://localhost:3000/cars", {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
           context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
           context.dispatch("getCars");
         });
     },
     editCar: async (context, car) => {
       await fetch(heroku + "/cars/" + car.id, {
-      // await fetch("http://localhost:3000/cars/" + car.id, {
-        method: "PUT",
-        body: JSON.stringify(car),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          // await fetch("http://localhost:3000/cars/" + car.id, {
+          method: "PUT",
+          body: JSON.stringify(car),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
           context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
           context.dispatch("getCars");
         });
     },
     deleteCar: async (context, id) => {
       await fetch(heroku + "/cars/" + id, {
-      // await fetch("http://localhost:3000/cars/" + id, {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+          // await fetch("http://localhost:3000/cars/" + id, {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -128,14 +136,14 @@ export default createStore({
 
     //user
     register: async (context, payload) => {
-      await fetch(heroku + "/users" ,{
-      // await fetch("http://localhost:3000/users", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
+      await fetch(heroku + "/users", {
+          // await fetch("http://localhost:3000/users", {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -144,15 +152,15 @@ export default createStore({
         });
     },
     login: async (context, payload) => {
-      await fetch(heroku + "/users" ,{
-        // await fetch("http://localhost:3000/users", {
-        method: "PATCH",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+      await fetch(heroku + "/users", {
+          // await fetch("http://localhost:3000/users", {
+          method: "PATCH",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
@@ -161,10 +169,13 @@ export default createStore({
             context.commit("setUser", data.user);
             context.commit("setToken", data.token);
             context.dispatch('setAdmin')
+            setTimeout(() => {
+              context.state.msg = null;
+            }, 3000);
           } else {
             context.state.msg = data.msg;
             setTimeout(() => {
-            context.state.msg = null;
+              context.state.msg = null;
             }, 3000);
           }
         });
@@ -175,7 +186,7 @@ export default createStore({
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
-          context.state.msg = data.msg;
+          // context.state.msg = data.msg;
           context.commit("setUser", data.results[0]);
         });
     },
@@ -185,54 +196,65 @@ export default createStore({
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
-          context.state.msg = data.msg;
+          // context.state.msg = data.msg;
           context.commit("setUsers", data.results);
         });
     },
     editUser: async (context, user) => {
-      await fetch(heroku + "/users/" + user.id ,{
-        // await fetch("http://localhost:3000/users/" + user.id, {
-        method: "PUT",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+      await fetch(heroku + "/users/" + user.id, {
+          // await fetch("http://localhost:3000/users/" + user.id, {
+          method: "PUT",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
           context.state.msg = data.msg;
           context.dispatch("getUser", user.id);
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
         });
     },
     editUserPassword: async (context, user) => {
-      await fetch(heroku + "/users/" + user.id + "/pass" ,{
-        // await fetch("http://localhost:3000/users/" + user.id + "/pass", {
-        method: "PUT",
-        body : JSON.stringify(user),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+      await fetch(heroku + "/users/" + user.id + "/pass", {
+          // await fetch("http://localhost:3000/users/" + user.id + "/pass", {
+          method: "PUT",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
         });
     },
     deleteUser: async (context, id) => {
-      await fetch(heroku + "/users/" + id ,{
-        // await fetch("http://localhost:3000/users/" + id, {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+      await fetch(heroku + "/users/" + id, {
+          // await fetch("http://localhost:3000/users/" + id, {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
+          context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
           router.push('/')
         });
     },
@@ -240,14 +262,14 @@ export default createStore({
     //wishlist
     getWishlist: async (context, id) => {
       id = context.state.user.id
-      await fetch(heroku + "/users/" + id + "/wishlist" ,{
-        // await fetch("http://localhost:3000/users/" + id + "/wishlist", {
-        method: "GET",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+      await fetch(heroku + "/users/" + id + "/wishlist", {
+          // await fetch("http://localhost:3000/users/" + id + "/wishlist", {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data)
@@ -261,54 +283,63 @@ export default createStore({
     addToWishlist: async (context, item, id) => {
       id = context.state.user.id;
       console.log(item);
-      await fetch(heroku + "/users/" + id + "/wishlist" ,{
-        // await fetch("http://localhost:3000/users/" + id + "/wishlist", {
-        method: "POST",
-        body: JSON.stringify(item),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
+      await fetch(heroku + "/users/" + id + "/wishlist", {
+          // await fetch("http://localhost:3000/users/" + id + "/wishlist", {
+          method: "POST",
+          body: JSON.stringify(item),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
           context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
           context.dispatch("getWishlist", id);
         });
     },
     clearWishlist: async (context, id) => {
-      await fetch(heroku + "/users/" + id + "/wishlist" ,{
-        // await fetch("http://localhost:3000/users/" + id + "/wishlist", {
-        method: "DELETE",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": context.state.token,
-        },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data);
-          context.state.msg = data.msg;
-          context.dispatch("getWishlist", id);
-        });
-    },
-    deleteWishlistItem: async (context, list, id) => {
-      id = context.state.user.id;
-        await fetch(heroku + "/users/" + id + "/wishlist/" + list.wishlistid,
-          // "http://localhost:3000/users/" + id + "/wishlist/" + list.wishlistid,
-        {
+      await fetch(heroku + "/users/" + id + "/wishlist", {
+          // await fetch("http://localhost:3000/users/" + id + "/wishlist", {
           method: "DELETE",
           headers: {
             "Content-type": "application/json; charset=UTF-8",
             "x-auth-token": context.state.token,
           },
-        }
-      )
+        })
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
           context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
+          context.dispatch("getWishlist", id);
+        });
+    },
+    deleteWishlistItem: async (context, list, id) => {
+      id = context.state.user.id;
+      await fetch(heroku + "/users/" + id + "/wishlist/" + list.wishlistid,
+          // "http://localhost:3000/users/" + id + "/wishlist/" + list.wishlistid,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+              "x-auth-token": context.state.token,
+            },
+          }
+        )
+        .then((res) => res.json())
+        .then((data) => {
+          // console.log(data);
+          context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+          }, 3000);
           context.dispatch("getWishlist", id);
         });
     },

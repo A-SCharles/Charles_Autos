@@ -1,112 +1,14 @@
 <template>
-  <!-- <div>
-    <div class="container1">
-      <figure>
-        <img
-          src="https://i.postimg.cc/x8fNMSqN/ed1c8714-ac64-4a7a-bf1d-23fc55279a60.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/tCgVgyLL/Follow-Mahi-87-Writes-Like-Share-Comments.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/kXhR6zCD/idk-how-to-make-this-my-wallpaper-please-help.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/L8YYzD4D/Image-in-Cars-collection-by-Bellus-Culpa-on-We-Heart-It.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/Jnwbygbj/Rides.jpg"
-          style="height: 490px; width: 296px"
-        />
-      </figure>
-      <div id="card">
-        <figure>
-          <img
-            src="https://i.postimg.cc/zfTyQfgR/Nissan-Skyline-R32.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/9MVDHjdg/Pin-by-Connor-on-Music-Trippy-iphone-wallpaper-Asap-rocky-wallpaper-Iphone-wallpaper-vintage.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/P5gLKDPj/Pin-em-Cars-Car-Meets.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/KzNRZsQG/Retro-Aesthetic-City-Wallpapers-Wallpaper-Safari.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/cChYbLPc/Supra-A80.jpg"
-            style="height: 490px; width: 296px"
-          />
-        </figure>
-      </div>
-    </div>
-    <div class="container2">
-      <figure>
-        <img
-          src="https://i.postimg.cc/Wb9gmtGN/wallpaper-duvarka-d-landscape-manzara-car-araba-classic-klasik-sunset-g-nbat-m-k-rm-z-red.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/Yq2QmQmD/21309c01-:469-4909-bc3a-dbbc032b76b6.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/nhgm55SN/2b235c67-42f3-405d-8f40-8f5faaf17fc7.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/0jPDnwXQ/5cb5901a-bf7f-4b70-8084-13fc67103d6d.jpg"
-          style="height: 490px; width: 296px"
-        />
-        <img
-          src="https://i.postimg.cc/Pxm11449/Telegram-Contact-morocca-Best-jdm-cars-Jdm-wallpaper-Car-wallpapers.jpg"
-          style="height: 490px; width: 296px"
-        />
-      </figure>
-      <div id="card">
-        <figure>
-          <img
-            src="https://i.postimg.cc/Xv5508Tq/96564325-0c37-44c5-b6a7-925c5efcc9cb.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/cHM8vJ1N/Ah.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/xCSzjm2R/B-M-W.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/VkdMK1gj/image.jpg"
-            style="height: 490px; width: 296px"
-          />
-          <img
-            src="https://i.postimg.cc/h419j2h7/Gtr-r34-supra-Video-Nissan-skyline-gtr-Modified-cars-Drift-cars.jpg"
-            style="height: 490px; width: 296px"
-          />
-        </figure>
-      </div>
-    </div>
-  </div> -->
-
   <section id="landing">
     <div class="container">
-      <div class="row vh-100 d-flex justify-content-center align-content-center mx-auto">
+      <div
+        class="row vh-100 d-flex justify-content-center align-content-center mx-auto"
+      >
         <div class="col-md-12 text-center mx-auto">
           <div class="card bg-transparent border-0">
             <h2 class="display-2 fw-bolder">Welcome to</h2>
             <h1 class="display-2 fw-bold fst-italic">Charles Autos</h1>
           </div>
-          <!-- <img class="img-fluid rounded" src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg" alt=""> -->
         </div>
       </div>
     </div>

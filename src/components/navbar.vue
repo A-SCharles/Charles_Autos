@@ -128,10 +128,10 @@
 
         <div v-else class="">
           <ul class="navbar-nav d-flex flex-row">
-            <a class="nav-link mx-2">
+            <a class="logs nav-link mx-2">
               <router-link to="/login"> Login </router-link>
             </a>
-            <a class="nav-link mx-2">
+            <a class="logs nav-link mx-2">
               <router-link to="/register"> Register </router-link>
             </a>
           </ul>
@@ -179,6 +179,17 @@ nav {
   height: 230px;
   /* margin-right:20px; */
   padding-top: 10px;
+}
+
+.logs {
+  transition: 0.5s;
+  /* transition: all 0.4s ease-in-out 0s; */
+}
+
+.logs :hover {
+text-decoration-line: underline;
+text-decoration-color: white;
+  transition-duration: .5s;
 }
 
 .Navbar {

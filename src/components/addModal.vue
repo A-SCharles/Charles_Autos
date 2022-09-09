@@ -23,12 +23,38 @@
 
                 <div class="mb-3">
                   <label class="form-label">Manufacturer :</label>
-                  <input v-model="manufacturer" type="text" class="form-control" />
+                  <!-- <input v-model="manufacturer" type="text" class="form-control" /> -->
+                  <select
+                name="manufacturer"
+                class="form-select"
+                v-model="manufacturer"
+              >
+                <option value="" selected disabled>
+                  Add Manufacturer
+                </option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="BMW">BMW</option>
+                <option value="Cadillac">Cadillac</option>
+              </select>
                 </div>
 
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Body Style :</label>
-                  <input v-model="bodystyle" type="text" class="form-control" />
+                  <!-- <input v-model="bodystyle" type="text" class="form-control" /> -->
+                  <select name="bodystyle" class="form-select" v-model="bodystyle">
+                <option value="" selected disabled>
+                  Add Body Style
+                </option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Sedan">Sedan</option>
+                <option value="mini-SUV">Mini-suv</option>
+                <option value="Coupe">Coupe</option>
+              </select>
                 </div>
 
                 <div class="mb-3">

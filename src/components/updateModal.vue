@@ -23,18 +23,50 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Model :</label>
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Model :</label
+                  >
                   <input v-model="car.model" type="text" class="form-control" />
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Manufacturer :</label>
-                  <input v-model="car.manufacturer" type="text" class="form-control" />
+                  <!-- <input v-model="car.manufacturer" type="text" class="form-control" /> -->
+                  <select
+                    name="manufacturer"
+                    class="form-select"
+                    v-model="car.manufacturer"
+                  >
+                    <option value="All" selected disabled>
+                      Choose Manufacturer
+                    </option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Cadillac">Cadillac</option>
+                  </select>
                 </div>
 
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Body Style :</label>
-                  <input v-model="car.bodystyle" type="text" class="form-control" />
+                  <label for="exampleInputPassword1" class="form-label"
+                    >Body Style :</label
+                  >
+                  <!-- <input v-model="car.bodystyle" type="text" class="form-control" /> -->
+                  <select
+                    name="bodystyle"
+                    class="form-select"
+                    v-model="car.bodystyle"
+                  >
+                    <option value="" selected disabled>Choose Bodystyle</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="mini-SUV">Mini-suv</option>
+                    <option value="Coupe">Coupe</option>
+                  </select>
                 </div>
 
                 <div class="mb-3">
@@ -45,18 +77,33 @@
               <div class="col-md-6">
                 <div class="mb-3">
                   <label class="form-label">Model Year :</label>
-                  <input v-model="car.modelyear" type="text" class="form-control" />
+                  <input
+                    v-model="car.modelyear"
+                    type="text"
+                    class="form-control"
+                  />
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Price :</label>
-                  <input v-model="car.MSRP" type="number" class="form-control" />
+                  <input
+                    v-model="car.MSRP"
+                    type="number"
+                    class="form-control"
+                  />
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Transmission :</label>
-                  <select class="form-select" v-model="car.transmission" name="transmission" id="transmission">
-                    <option value="" disabled selected>Select your option</option>
+                  <select
+                    class="form-select"
+                    v-model="car.transmission"
+                    name="transmission"
+                    id="transmission"
+                  >
+                    <option value="" disabled selected>
+                      Select your option
+                    </option>
                     <option value="Manual">Manual</option>
                     <option value="Automatic">Automatic</option>
                   </select>
@@ -64,8 +111,15 @@
 
                 <div class="mb-3">
                   <label class="form-label">Fuel Type :</label>
-                  <select class="form-select" v-model="car.fueltype" name="fueltype" id="fueltype">
-                    <option value="" disabled selected>Select your option</option>
+                  <select
+                    class="form-select"
+                    v-model="car.fueltype"
+                    name="fueltype"
+                    id="fueltype"
+                  >
+                    <option value="" disabled selected>
+                      Select your option
+                    </option>
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
                   </select>
@@ -108,11 +162,11 @@ export default {
 </script>
 
 <style scoped>
-  .btn{
+.btn {
   background-color: rgb(0, 0, 0);
-  height:40px;
+  height: 40px;
   /* width:202px; */
-  color:rgb(223, 4, 4);
-  font-weight:bold
+  color: rgb(223, 4, 4);
+  font-weight: bold;
 }
 </style>

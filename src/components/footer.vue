@@ -2,50 +2,40 @@
   <footer id="footer">
     <div class="container p-3">
       <div class="row">
-        <div class="col my-auto m-3 d-flex flex-column">
-          <a class="link fs-3">
+        <!-- <div class="col my-auto m-3 d-flex flex-column"> -->
+        <div class="d-sm-flex justify-content-around mx-auto">
+          <!-- <a class="link fs-3">
             <router-link to="/contact"> Contact </router-link>
           </a>
 
           <a class="link fs-3">
             <router-link to="/about"> About us </router-link>
+          </a> -->
+          <a class="link fs-3 pb-2 text-white">
+            <router-link to="/" class="text-decoration-none">
+              ℍ𝕠𝕞𝕖
+            </router-link>
+          </a>
+          <a class="link fs-3 pb-2 text-white">
+            <router-link to="/about" class="text-decoration-none">
+              𝔸𝕓𝕠𝕦𝕥
+            </router-link>
+          </a>
+          <a class="link fs-3 pb-2 text-white">
+            <router-link to="/all" class="text-decoration-none">
+              ℙ𝕣𝕠𝕕𝕦𝕔𝕥𝕤
+            </router-link>
+          </a>
+          <a class="link fs-3 pb-2 text-white">
+            <router-link to="/contact" class="text-decoration-none">
+              ℂ𝕠𝕟𝕥𝕒𝕔𝕥
+            </router-link>
           </a>
         </div>
+        <!-- </div> -->
 
-        <div class="col mt-3">
-          <h6>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quasi
-            corrupti voluptas ex tempora perspiciatis amet iure! Omnis nemo
-            commodi nesciunt, molestias laudantium expedita. Incidunt facilis
-            nam accusantium molestias! Omnis.
-          </h6>
-        </div>
-        <div class="col mt-3">
-          <h6>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
-            aperiam sed fugiat eveniet quisquam delectus, minus tempore est,
-            excepturi, inventore ut consectetur facere totam quia! Iste dicta
-            deserunt a iusto.
-          </h6>
-        </div>
-        <div class="col mt-3">
-          <h6>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
-            aperiam sed fugiat eveniet quisquam delectus, minus tempore est,
-            excepturi, inventore ut consectetur facere totam quia! Iste dicta
-            deserunt a iusto.
-          </h6>
-        </div>
-        <div class="col m-3">
-          <h6>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
-            aperiam sed fugiat eveniet quisquam delectus, minus tempore est,
-            excepturi, inventore ut consectetur facere totam quia! Iste dicta
-            deserunt a iusto.
-          </h6>
-        </div>
-        <div class="row">
-          <p>
+        <div class="row mx-auto">
+          <p class="text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
             optio sit! Asperiores provident dolorem, itaque expedita doloremque
             amet quis? Debitis facere alias quos, ea deleniti aliquid quia
@@ -55,7 +45,7 @@
           <div class="row mx-auto lead text-center">
             <p class="fs-3">
               <a
-                class="mx-3"
+                class="btn fs-3 mx-3"
                 href="https://github.com/A-SCharles"
                 target="_blank"
               >
@@ -63,7 +53,7 @@
               </a>
 
               <a
-                class="mx-3"
+                class="btn fs-3 mx-3"
                 href="https://www.linkedin.com/in/abdus-samad-charles-51bba5227/"
                 target="_blank"
               >
@@ -82,11 +72,17 @@
 </template>
 
 <style scoped>
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+/* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"); */
+
 #footer {
   color: white;
-  max-height: 10vh;
+  min-height: fit-content;
+  overflow-x: hidden;
 }
+#footer a{
+color: white !important;
+}
+
 .container {
   min-height: fit-content;
   background-color: rgb(99, 6, 9);
@@ -101,5 +97,15 @@ h6 {
   margin-top: 20px;
 }
 
+.btn {
+  transition: .5s;
+}
 
+.btn :hover {
+  color: lightblue;
+}
+
+a.router-link-exact-active {
+  filter: invert();
+}
 </style>
