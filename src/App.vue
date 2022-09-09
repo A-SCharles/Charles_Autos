@@ -1,6 +1,11 @@
 <template>
   <Navbar />
-  <router-view />
+  <router-view v-slot="{Component}">
+    <transition name="route" mode="out-in">
+      <component :is="Component">
+      </component>
+    </transition>
+  </router-view>
   <Footer/>
 </template>
 
@@ -46,5 +51,20 @@ a {
   min-height: 100vh;
   background-color: black;
   transition: 10s ease-in-out;
+}
+
+.route-enter-from{
+  opacity: 0;
+  transform: translateY(100px);
+}
+.route-enter-active{
+  transition: all 0.5s ease-out;
+}
+.route-leave-to{
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.route-leave-active{
+  transition: all 0.5s ease-in;
 }
 </style>

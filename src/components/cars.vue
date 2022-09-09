@@ -57,6 +57,11 @@ a:hover{
 .row{
   --bs-gutter-x:0px;
 }
+
+img {
+  object-fit: cover;
+}
+
 /* h5{
   color:rgb(181, 0, 0);
   font-weight:bold;

@@ -47,12 +47,13 @@
           </figure>
         </div>
       </div>
+
       <div class="row">
         <div class="col1 my-auto">
           <h1>Welcome to Charles Auto. A Place to Buy AutoMobiles.</h1>
         </div>
         <div class="col img-fluid">
-          <img
+          <img class="round"
             src="https://i.postimg.cc/CxMYYj0X/New-2023-Honda-Passport.png"
           />
         </div>
@@ -63,14 +64,7 @@
         </div>
         <div class="col text-center" id="middle">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore at
-            necessitatibus perspiciatis eveniet cumque perferendis, possimus
-            molestiae nemo placeat provident adipisci fuga quia enim reiciendis
-            distinctio incidunt, rem laborum accusamus aliquid doloribus
-            molestias. Ipsa laboriosam, maxime voluptate, repellat error fuga
-            eligendi earum voluptas dolores distinctio unde! Omnis quis, cumque
-            provident labore ex veritatis, vero saepe consectetur itaque ipsum
-            placeat quia voluptate atque praesentium eos exercitationem iste.
+            Toyota South Africa prides itself on transparency. If you're interested in what it is we stand for, our history, the leadership we strive to promote, or our latest news, you've come to the right place.At Charles Autos we make every effort to understand each other, take responsibility and build mutual trust. We value diversity and treat all people with equal and mutual respect. Through Teamwork we stimulate personal and professional growth, share development opportunities, and maximise individual and team performance
           </p>
         </div>
         <div class="col-3" id="right"></div>
@@ -123,12 +117,7 @@
         </div>
         <div class="col-5">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
-            impedit modi harum quaerat vero nihil voluptatum dolore corporis
-            architecto dolores odit quae, alias doloribus sequi dolor
-            temporibus? Illum omnis cum mollitia perspiciatis quas asperiores
-            fugit minus neque accusantium, fugiat excepturi aut a rem quam
-            facere, possimus minima sequi doloremque reprehenderit.
+            Charles-Auto is build on a foundation where we sell car brands with a cheaper sale of 10%. We know cars are the cheaper and we are here to help you with that problem. Our goal is for customer to want to come back knowing youll get great prices and deals here at cahrles-Autos
           </p>
         </div>
       </div>
@@ -137,6 +126,11 @@
 </template>
 
 <style scoped>
+.row {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
 * {
   padding: 0;
   margin: 0;

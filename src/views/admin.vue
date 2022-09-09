@@ -56,14 +56,14 @@
         </tbody>
       </table>
     </div>
-  </div>
-
-  <!-- modals -->
-  <div v-if="cars">
-    <AddModal />
-
-    <div v-for="car in cars" :key="car">
-      <UpdateModal :car="car" />
+    
+    <!-- modals -->
+    <div v-if="cars">
+      <AddModal />
+      
+      <div v-for="car in cars" :key="car">
+        <UpdateModal :car="car" />
+      </div>
     </div>
   </div>
 </template>
