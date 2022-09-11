@@ -115,7 +115,6 @@ i {
 }
 a {
   text-decoration: none;
-  /* color:rgb(137, 9, 9); */
   color: black;
   font-weight: bold;
 }
@@ -127,7 +126,6 @@ thead {
 h2 {
   color: black;
   font-size: 50px;
-  /* font-weight: bold; */
 }
 
 
