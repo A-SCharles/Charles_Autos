@@ -2,17 +2,30 @@
 <div class="card mx-auto m-4 p-3">
   <router-link :to="{name: 'single', params: {id: car.id}}">
   <div class="row">
-    <div class="col-md-6 mx-auto">
-    <img :src="car.img" style="height:200px; width:320px" class="img-fluid" alt="...">
+    <div class="col-md-7 mx-auto">
+    <img :src="car.img" class="img-fluid" alt="...">
   </div>
-    <div class="vr" style="width:1px; color:black; height:180px; margin-right: 10px;"></div>
+    <!-- <div class="vr" style="width:1px; color:black; height:180px; margin-right: 10px;"></div> -->
     
     <div class="col-md-5 my-auto">
-      <!-- <div class="card-body"> -->
-        <h5 class="card-title">{{car.model}}</h5>
-        <h5 class="card-title">{{car.manufacturer}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!-- </div>  -->
+      <div class="card-body">
+        <h5>{{car.manufacturer}} {{car.model}} from only R{{car.MSRP}}.00</h5>
+
+        <div class="row">
+          <div class="col">
+            <i class="fa fa-gears mx-1"></i>
+            <span>{{car.transmission}}</span>
+          </div>
+          <div class="col">
+            <i class="fas fa-gas-pump mx-1"></i>
+            <span>{{car.fueltype}}</span>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-car mx-1"></i>
+            <span>{{car.bodystyle}}</span>
+          </div>
+        </div>
+      </div> 
     </div>
   
 </div>
@@ -28,32 +41,29 @@ props: ["car"],
 
 <style scoped>
 .card{
-  /* height:220px; */
   width:auto;
-  /* background-color: rgb(0, 0, 0);
-  color:white; */
 }
 .card:hover{
-  background-color: var(--color-);
+  /* background-color: var(--color-); */
+  background-color: rgb(121, 6, 27);
   box-shadow: 5px 5px 15px rgb(62, 60, 60);
 }
+
+.card:hover a{
+  color:white;
+}
+
+
 img{
   vertical-align:top
 }
-/* img:hover{
-  height:240px;
-  width:auto;
-} */
+
 a{
   text-decoration:none;
   color:black;
   font-size:17px;
 }
-a:hover{
-  color:white;
-  /* font-weight:bold; */
-  /* width:300px; */
-}
+
 .row{
   --bs-gutter-x:0px;
 }
@@ -61,16 +71,4 @@ a:hover{
 img {
   object-fit: cover;
 }
-
-/* h5{
-  color:rgb(181, 0, 0);
-  font-weight:bold;
-}
-h5:hover{
-  color:rgb(255, 255, 255);
-  font-weight:bolder;
-} */
-/* .vr:hover{
-  color:rgb(92, 92, 92)
-} */
 </style>

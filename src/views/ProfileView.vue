@@ -2,22 +2,14 @@
   <div id="profile">
     <div class="container" v-if="user">
       <div class="card border-0">
-        <div
-          class="row py-5 d-flex justify-content-center align-content-center"
-        >
+        <div class="row py-5 d-flex justify-content-center align-content-center">
           <div class="col-md-6 me-auto">
             <form class="shadow-lg p-5 rounded-5 my-auto text-light">
               <h2 class="text-center">My Details</h2>
 
               <p class="text-center">
-                <button
-                  class="btn mt-5"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                >
+                <button class="btn mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                  aria-expanded="false" aria-controls="collapseExample">
                   View Details
                 </button>
               </p>
@@ -26,76 +18,40 @@
                 <div class="card border-0 card-body">
                   <div class="mb-3">
                     <label class="form-label" for="name">Username :</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      v-model="user.username"
-                      placeholder="Enter Username"
-                    />
+                    <input class="form-control" type="text" v-model="user.username" placeholder="Enter Username" />
                   </div>
 
                   <div class="mb-3">
-                    <label for="firstname" class="form-label"
-                      >Firstname :</label
-                    >
-                    <input
-                      v-model="user.firstname"
-                      type="text"
-                      class="form-control"
-                      placeholder="Enter Firstname"
-                      required
-                    />
+                    <label for="firstname" class="form-label">Firstname :</label>
+                    <input v-model="user.firstname" type="text" class="form-control" placeholder="Enter Firstname"
+                      required />
                   </div>
 
                   <div class="mb-3">
                     <label for="surname" class="form-label">Surname :</label>
-                    <input
-                      v-model="user.surname"
-                      type="text"
-                      class="form-control"
-                      placeholder="Enter Surname"
-                      required
-                    />
+                    <input v-model="user.surname" type="text" class="form-control" placeholder="Enter Surname"
+                      required />
                   </div>
 
                   <div class="mb-3">
-                    <label for="surname" class="form-label"
-                      >Profile Image :</label
-                    >
-                    <input
-                      v-model="user.profile"
-                      type="text"
-                      class="form-control"
-                      placeholder="Enter image URL"
-                      required
-                    />
+                    <label for="surname" class="form-label">Profile Image :</label>
+                    <input v-model="user.profile" type="text" class="form-control" placeholder="Enter image URL"
+                      required />
                   </div>
 
                   <div class="mb-3">
-                    <label for="email" class="form-label"
-                      >Email address :</label
-                    >
-                    <input
-                      v-model="user.email"
-                      type="email"
-                      class="form-control"
-                      placeholder="Enter Email"
-                      required
-                    />
+                    <label for="email" class="form-label">Email address :</label>
+                    <input v-model="user.email" type="email" class="form-control" placeholder="Enter Email" required />
                   </div>
-                  <button
-                    type="button"
-                    class="btn m-3"
-                    @click="this.$store.dispatch('editUser', user)"
-                  >
+                  <button type="button" class="btn m-3" @click="this.$store.dispatch('editUser', user)">
                     Update Details
                   </button>
 
-                  <button
-                    type="button"
-                    class="btn"
-                    @click="this.$store.dispatch('deleteUser', user.id)"
-                  >
+                  <div v-if="msg" class="text-center m-5">
+                    <h2>{{ msg }}</h2>
+                  </div>
+
+                  <button type="button" class="btn" @click="this.$store.dispatch('deleteUser', user.id)">
                     Delete Account
                   </button>
                 </div>
@@ -114,10 +70,18 @@
 <script>
 import Loader from "@/components/loading.vue";
 export default {
+  data() {
+    return {
+      
+    }
+  },
   components: { Loader },
   computed: {
     user() {
       return this.$store.state.user;
+    },
+    msg() {
+      return this.$store.state.msg;
     },
   },
 };
@@ -130,17 +94,18 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .card {
   background-color: var(--color-);
   /*
   /* border-width: 0px; */
 }
 
-.btn{
+.btn {
   background-color: rgb(0, 0, 0);
-  height:40px;
-  color:rgb(223, 4, 4);
-  font-weight:bold
+  height: 40px;
+  color: rgb(223, 4, 4);
+  font-weight: bold
 }
 
 form {
