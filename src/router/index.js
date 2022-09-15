@@ -40,7 +40,7 @@ const routes = [
     props: true,
   },
   {
-    path: "/profile/",
+    path: "/profile",
     name: "profile",
     component: () => import("../views/ProfileView.vue"),
   },

@@ -1,7 +1,6 @@
 <template>
   <section id="contact">
     <div class="container p-4">
-
       <div class="row">
         <div class="col-md-6 my-auto">
           <h1>Headquarters Location</h1>
@@ -30,46 +29,54 @@
           <div class="contact-container">
             <h2>Send me a message</h2>
             <p>
-              Feel free to get in touch with us with anything related to our vehicles or how to improve our site. I will
-              get back to you as soon as possible.
+              Feel free to get in touch with us with anything related to our
+              vehicles or how to improve our site. I will get back to you as
+              soon as possible.
             </p>
-            <form id="form" action="https://formspree.io/f/meqdeplo" method="POST">
+            <form
+              id="form"
+              action="https://formspree.io/f/meqdeplo"
+              method="POST"
+            >
               <div class="wrapper">
-                <input type="text" name="name" placeholder="Your name" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
                 <div class="gradient-bg"></div>
               </div>
               <div class="wrapper">
-                <!-- <input type="email" placeholder="Email address" /> -->
-                <input class="form-control" type="email" name="email" placeholder="Your Email">
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
                 <div class="gradient-bg"></div>
               </div>
               <div class="wrapper">
-                <input type="text" placeholder="Subject" name="subject">
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  name="subject"
+                  required
+                />
                 <div class="gradient-bg"></div>
               </div>
               <div class="wrapper wrapper-big">
-                <!-- <textarea placeholder="Message"></textarea> -->
-                <textarea class="form-text" name="message" placeholder="Message"></textarea>
+                <textarea
+                  class="form-text"
+                  name="message"
+                  placeholder="Message"
+                ></textarea>
                 <div class="gradient-bg"></div>
               </div>
-              <!-- <button>Send</button> -->
-            <button class="btn" type="submit">Send</button>
+              <button class="btn" type="submit">Send</button>
             </form>
           </div>
-
-          <!-- <form action="https://formspree.io/f/meqdeplo" method="POST">
-            <div class="m-3">
-              <label class="form-label">
-                Your email:
-              <input class="form-control" type="email" name="email">
-            </label>
-            <label class="form-label">
-              Your message:
-              <textarea class="form-text" name="message"></textarea>
-            </label>
-            <button type="submit">Send</button>
-          </div>
-          </form> -->
         </div>
 
         <div class="row">
@@ -89,7 +96,6 @@
 /*  */
 .contact-container {
   background-color: rgba(0, 0, 0, 0.5);
-  /* border: 3px solid #000; */
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -133,7 +139,7 @@
 .contact-container textarea {
   border: none;
   border-radius: 4px;
-  font-family: 'Muli';
+  font-family: "Muli";
   font-size: 14px;
   padding: 12px;
   position: absolute;
@@ -150,9 +156,13 @@
   outline: 0;
 }
 
-.contact-container input:focus+.gradient-bg,
-.contact-container textarea:focus+.gradient-bg {
-  background: linear-gradient(to right, var(--color-pink-1), var(--color-pink-2));
+.contact-container input:focus + .gradient-bg,
+.contact-container textarea:focus + .gradient-bg {
+  background: linear-gradient(
+    to right,
+    var(--color-pink-1),
+    var(--color-pink-2)
+  );
 }
 
 .contact-container .gradient-bg {
@@ -166,18 +176,6 @@
   z-index: 9;
 }
 
-/* .contact-container button {
-  background: linear-gradient(to right, var(--color-pink-1), var(--color-pink-2));
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0 3px 5px rgba(237, 115, 200, 0.5);
-  color: #fff;
-  display: block;
-  font-size: 16px;
-  padding: 12px;
-  width: 100%;
-} */
-
 @media screen and (max-width: 600px) {
   .contact-container {
     padding: 20px 30px;
@@ -189,18 +187,18 @@
   min-height: 100vh;
   background-color: black;
   color: white;
-  background-image: url('https://i.postimg.cc/PryV2kcW/wallpaperbetter-com-1920x1080.jpg');
+  background-image: url("https://i.postimg.cc/PryV2kcW/wallpaperbetter-com-1920x1080.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.btn{
+.btn {
   background-color: rgb(0, 0, 0);
-  height:40px;
-  width:202px;
-  color:rgb(223, 4, 4);
-  font-weight:bold
+  height: 40px;
+  width: 202px;
+  color: rgb(223, 4, 4);
+  font-weight: bold;
 }
 
 span {

@@ -36,7 +36,7 @@
                       data-bs-dismiss="offcanvas"
                       src="https://i.postimg.cc/YSfNqcz3/5c0f995c86098-thumb900.jpg"
                     />
-                    <a data-bs-dismiss="offcanvas" class="text-center">
+                    <a @click="profile" data-bs-dismiss="offcanvas" class="text-center">
                       𝕍𝕚𝕖𝕨 ℙ𝕣𝕠𝕗𝕚𝕝𝕖
                     </a>
                   </router-link>
@@ -160,11 +160,14 @@ export default {
     logout() {
       this.$store.state.user = null;
       this.$store.state.token = null;
-      this.$store.state.cart = null;
+      this.$store.state.wishlist = null;
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       router.push("/");
     },
+    profile() {
+      router.push("/profile");
+    }
   },
   components: { Wishlist },
 };

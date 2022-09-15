@@ -147,8 +147,19 @@ export default createStore({
         .then((res) => res.json())
         .then((data) => {
           // console.log(data);
-          context.state.msg = data.msg;
-          context.dispatch("login", payload);
+          if (data.msg === "Registration Successful") {
+            context.state.msg = data.msg;
+            setTimeout(() => {
+              context.state.msg = null;
+              context.dispatch("login", payload);
+              router.push('/')
+            }, 5000);
+          } else {
+            context.state.msg = data.msg;
+            setTimeout(() => {
+              context.state.msg = null;
+            }, 3000);
+          }
         });
     },
     login: async (context, payload) => {
@@ -171,6 +182,7 @@ export default createStore({
             context.dispatch('setAdmin')
             setTimeout(() => {
               context.state.msg = null;
+              router.push('/')
             }, 3000);
           } else {
             context.state.msg = data.msg;
@@ -250,11 +262,36 @@ export default createStore({
         })
         .then((res) => res.json())
         .then((data) => {
+          // console.log(data);
+          context.state.msg = data.msg;
+          setTimeout(() => {
+            context.state.msg = null;
+            context.dispatch('getUsers')
+          }, 3000);
+        });
+    },
+
+    deleteAccount: async (context, id) => {
+      await fetch(heroku + "/users/" + id, {
+          // await fetch("http://localhost:3000/users/" + id, {
+          method: "DELETE",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "x-auth-token": context.state.token,
+          },
+        })
+        .then((res) => res.json())
+        .then((data) => {
           console.log(data);
           context.state.msg = data.msg;
           setTimeout(() => {
             context.state.msg = null;
           }, 3000);
+          context.state.user = null;
+          context.state.token = null;
+          context.state.wishlist = null;
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
           router.push('/')
         });
     },
