@@ -2,6 +2,7 @@ import router from "@/router";
 import {
   createStore
 } from "vuex";
+import { getTable } from "./firebase_conn/queries";
 
 const heroku = "https://charlesautosapi.herokuapp.com";
 
@@ -163,35 +164,39 @@ export default createStore({
         });
     },
     login: async (context, payload) => {
-      await fetch(heroku + "/users", {
-          // await fetch("http://localhost:3000/users", {
-          method: "PATCH",
-          body: JSON.stringify(payload),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-            "x-auth-token": context.state.token,
-          },
-        })
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data);
-          if (data.msg === "Login Successful") {
-            context.state.msg = data.msg;
-            context.commit("setUser", data.user);
-            context.commit("setToken", data.token);
-            context.dispatch('setAdmin')
-            setTimeout(() => {
-              context.state.msg = null;
-              router.push('/')
-            }, 3000);
-          } else {
-            context.state.msg = data.msg;
-            setTimeout(() => {
-              context.state.msg = null;
-            }, 3000);
-          }
-        });
+      console.log(payload);
+      getTable('users')
     },
+    // login: async (context, payload) => {
+    //   await fetch(heroku + "/users", {
+    //       // await fetch("http://localhost:3000/users", {
+    //       method: "PATCH",
+    //       body: JSON.stringify(payload),
+    //       headers: {
+    //         "Content-type": "application/json; charset=UTF-8",
+    //         "x-auth-token": context.state.token,
+    //       },
+    //     })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       // console.log(data);
+    //       if (data.msg === "Login Successful") {
+    //         context.state.msg = data.msg;
+    //         context.commit("setUser", data.user);
+    //         context.commit("setToken", data.token);
+    //         context.dispatch('setAdmin')
+    //         setTimeout(() => {
+    //           context.state.msg = null;
+    //           router.push('/')
+    //         }, 3000);
+    //       } else {
+    //         context.state.msg = data.msg;
+    //         setTimeout(() => {
+    //           context.state.msg = null;
+    //         }, 3000);
+    //       }
+    //     });
+    // },
     getUser: async (context, user) => {
       await fetch(heroku + "/users/" + user)
         // fetch("http://localhost:3000/users/" + user)
